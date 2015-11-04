@@ -1,0 +1,30 @@
+author = "Jochem";
+OnLoadName = "Apollo";
+OnLoadMission = "Please report any bugs to github";
+respawn = 3;
+respawndelay = 5;
+respawnOnStart = 1;
+respawnVehicleDelay = 0;
+disabledAI = true;
+enableDebugConsole = 1;
+showGroupIndicator = 0;
+wreckManagerMode = 1;
+
+corpseManagerMode = 1;
+corpseLimit = 50;
+corpseRemovalMinTime = 180;
+corpseRemovalMaxTime = 600;
+
+#include "Scripts\CHVD\dialog.hpp"
+
+class Header
+{
+    gameType = Coop; // MP misison type
+    minPlayers = 1; //min # of players the mission supports
+    maxPlayers = 50; //max # of players the mission supports
+};
+
+class CfgFunctions
+{
+    #include "Scripts\CHVD\CfgFunctions.hpp"
+};

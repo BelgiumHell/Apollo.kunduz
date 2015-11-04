@@ -1,0 +1,268 @@
+//  	      ___			  ____________		 ___       ___           ___
+//		     /   \			 |            |		|	|	  |	  \         /   |
+//	        /     \			 |    ________|		|	|	  |	   \       /	|
+//	       /	   \		 |   |				|	|	  |     \     /		|
+//	      /	  / \   \		 |   |				|	|	  |  |\  \___/	/|	|
+//	     /   /___\   \		 |   |				|	|	  |	 | \	   / |	|
+//      /   _______   \	   	 |   |				|	|	  |	 |  \_____/	 |	|
+//     /   /       \   \     |   |_________		|	|	  |	 |			 |	|
+//    /   /         \   \	 |             |	|	|	  |	 |			 |	|
+//   /___/           \___\	 |_____________|	|___|	  |__|			 |__|
+//   by: Chief Wiggum
+// 	 www.awc-gaming.de
+
+//	file: stringtable.csv
+//  Description:	English -> German translation.
+
+
+
+
+LANGUAGE,								English,										German
+
+//MAIN DIALOG HEADER
+STR_CW_ACIM_HEADER_SEARCH,				SEARCH,											DURCHSUCHEN
+STR_CW_ACIM_HEADER_SHOUT,				SHOUT,											RUFEN
+STR_CW_ACIM_HEADER_INFO,				INFORMATIONS,									INFORMATIONEN
+STR_CW_ACIM_HEADER_CUSTODY,				CUSTODY,										GEWAHRSAM
+STR_CW_ACIM_HEADER_ADMIN,				ADMIN LOGIN,									ADMIN LOGIN
+STR_CW_ACIM_HEADER_BACK,				<- BACK,										<- ZURÜCK
+STR_CW_ACIM_HEADER_INVENTORY,			INVENTORY,										INVENTAR
+
+
+
+
+
+//MAIN DIALOG 2nd HEADER
+STR_CW_ACIM_STOP,						STOP!,											STOP!
+STR_CW_ACIM_GO,							GO!,											GEH WEITER!
+STR_CW_ACIM_GETDOWN,					GET DOWN!,										HINLEGEN!
+STR_CW_ACIM_GETUP,						GET UP!, 										AUFSTEHEN!
+STR_CW_ACIM_HANDCUFF, 					HANDCUFFS,										HANDSCHELLEN
+STR_CW_ACIM_ESCORT,						ESCORT,											ABFÜHREN
+STR_CW_ACIM_INVEHICLE,					PUT IN VEHICLE,									IN FAHRZEUG
+STR_CW_ACIM_CLOSE,						CLOSE,											SCHLIEßEN
+STR_CW_ACIM_CHECKSHIRT,					SEARCH SHIRT,									SHIRT KONTROL.
+STR_CW_ACIM_CHECKPANTS,					SEARCH PANTS,									HOSE KONTROL.
+STR_CW_ACIM_CHECKSHOES,					SEARCH SHOES,									SCHUHE KONTROL.
+STR_CW_ACIM_CHECKBACKPACK,				SEARCH BACKPACK,								RUCKSACK KONTROL.
+STR_CW_ACIM_CHECKVEST,					SEARCH VEST,									VESTE KONTROL.
+STR_CW_ACIM_IDCARD,						ID-CARD,										AUSWEIS
+STR_CW_ACIM_QUESTION,					QUESTION,				 						BEFRAGEN
+STR_CW_ACIM_FOLLOW,						FOLLOW! [WIP],									FOLGEN! [WIP]
+STR_CW_ACIM_ADMINCONSOLE,				ADMIN-CONSOLE,									ADMIN-KONSOLE
+
+//IVENTORY DIALOG TEXTS
+STR_CW_ACIM_TAKE,						TAKE,											NEHMEN
+STR_CW_ACIM_GIVE,						GIVE,											GEBEN
+STR_CW_ACIM_YOURINV,					YOUR INVENTORY:,								DEIN INVENTAR:
+STR_CW_ACIM_CIVINV,						CIVILIAN INVENTORY:,							ZIVILISTEN INVENTAR:
+
+
+
+
+//ID CARD DIALOG
+STR_CW_ACIM_ID_REPUPLIC,				FEDERAL REPUPLIC OF ALTIS, 						BUNDESREPUBLIK ALTIS
+STR_CW_ACIM_ID_NAME,					NAME:,											NAME:
+STR_CW_ACIM_ID_AGE,						AGE:,											ALTER:
+STR_CW_ACIM_ID_POB,						PLACE OF BIRTH:, 								GEBURTSORT:
+STR_CW_ACIM_ID_VALIDITY,				DATE OF EXPIRY:,								GÜLTIG BIS:
+STR_CW_ACIM_ID_SIGNATURE, 				SIGNATURE:,										UNTERSCHRIFT
+
+//DIALOG TOOLTIPS
+STR_CW_ACIM_TOOLTIP_STOP,				Order person to stop walking,					Person zum Stehenbleiben auffordern
+STR_CW_ACIM_TOOLTIP_GO, 				Order person to walk away,						Person zum Weitergehen auffordern
+STR_CW_ACIM_TOOLTIP_GETDOWN,			Order person to lay down on the ground,			Person zum Hinlegen auffordern
+STR_CW_ACIM_TOOLTIP_GETUP,				Order person to stand up,						Person zum Aufstehen auffordern
+STR_CW_ACIM_TOOLTIP_HANDCUFF,			Handcuff person,								Person in Handschellen legen
+STR_CW_ACIM_TOOLTIP_ESKORT, 			Escort person,									Person eskortieren
+STR_CW_ACIM_TOOLTIP_STOPESKORT,			Stop escorting,									Eskorte beenden
+STR_CW_ACIM_TOOLTIP_INVEHICLE,			Put person in Vehicle,							Peson in Fahrzeug verfrachten
+STR_CW_ACIM_TOOLTIP_CLOSE,				close ACIM,										ACIM beenden
+STR_CW_ACIM_TOOLTIP_CHECKSHIRT, 		Check the persons shirt,						Shirt der Person kontrollieren
+STR_CW_ACIM_TOOLTIP_CHECKPANTS, 		Check the person pants,							Hose der Person kontrollieren
+STR_CW_ACIM_TOOLTIP_CHECKSHOES,			Check the person shoes,							Schuhe der Person kontrollieren
+STR_CW_ACIM_TOOLTIP_CHECKBACKPACK,	 	Check the person Backpack,						Rucksack der Person kontrollieren
+STR_CW_ACIM_TOOLTIP_IDCARD,				Check the persons ID-Card,						Ausweis der Person kontrollieren
+STR_CW_ACIM_TOOLTIP_QUESTION,			Question civilian,								Person befragen
+STR_CW_ACIM_TOOLTIP_FOLLOW,				Order person to follow you,						Person zum Folgen auffordern
+
+//BASIC STRINGS
+STR_CW_ACIM_STRINGS_NOCIVINSUR,			There aren't any civilians around here!,		Keine Zivilisten in der Umgebung!
+STR_CW_ACIM_STRINGS_GETSEARCH,			I'm already getting searched by someone else!,	Ich werde bereits durchsucht!
+STR_CW_ACIM_STRINGS_YOUFOUND,		 	You've found:\n\n%1,							Du hast gefunden:\n\n%1
+STR_CW_ACIM_STRINGS_TOOFAR,				Where are you going?,							Wo wollen Sie denn hin Soldat?
+STR_CW_ACIM_STRINGS_YOUESCORT,			You're already escorting somebody!,				Du eskortierst bereits jemanden!
+STR_CW_ACIM_STRINGS_GETSESCORT,			The civilian is already getting escorted!,		Der Zivilist wird bereits eskortiert!
+STR_CW_ACIM_STRINGS_HASTOHANDCUFF,		The civilian has to be handcuffed!,				Der Zivilist muss erst gefesselt werden!
+STR_CW_ACIM_STRINGS_NOBACKPACK,			I don't have a backpack!,						Ich habe keinen Rucksack!
+STR_CW_ACIM_STRINGS_NOVEST,				I don't have a vest!,							Ich habe keine Veste!
+STR_CW_ACIM_STRINGS_CURSTARGETNOCIV,	You have to look at the civilian in order to stop the escort!, 		Du musst den Zivilist anschauen um die Eskorte zu beenden!
+
+
+//ANSWERS
+STR_CW_ACIM_ANSWER_GETOUTOFEYES,		Get out of my eyes!,																	Geh mit aus den Augen!
+STR_CW_ACIM_ANSWER_PLAYHERO, 			You guys come into our country and play Hero but we won't let that happen anymore!,		Ihr kommt in unser Land und spielt hier die Helden aber wir werden das nicht mehr zulassen!
+STR_CW_ACIM_ANSWER_HOWAREYOU,			How are you?,																			Wie geht es Ihnen?
+STR_CW_ACIM_ANSWER_SORRYNOLANG,			Sorry.. ahh.. no.. English,																Sorry.. ahh.. no.. German
+STR_CW_ACIM_ANSWER_PREGNANT,			Please let me go! My wife is in the hospital! She's pregnant!, 							Bitte lassen sie mich gehen! Meine Frau liegt im Krankenhaus! Sie ist schwanger!
+STR_CW_ACIM_ANSWER_YOUNOTFROMHERE,		You aren't from here are you?,															Du bist nicht von hier oder?
+STR_CW_ACIM_ANSWER_YOKE,				How dies a brain cell of a blonde?\nAlone!!\n:D,										Wie stirbt eine Gehirnzelle einer Blondine?\nAlleine!!\n:D
+STR_CW_ACIM_ANSWER_MYPEOPLENEEDME,		I have to go! My people need me!,														Ich muss weg! Meine Leute brauchen mich!,
+STR_CW_ACIM_ANSWER_NOTHINGTOSAY,		I've got nothing to say!,																Ich hab nichts zu sagen!,
+STR_CW_ACIM_ANSWER_FUCKOFF,				Fuck off!,																				Verpiss dich!,
+STR_CW_ACIM_ANSWER_ONHOLIDAY, 			I'm only on Holiday.,																	Ich mach hier nur Urlaub.
+STR_CW_ACIM_ANSWER_ILIKEYOURSHOES,		I like your shoes.,																		Ich mag Ihre Schuhe.
+STR_CW_ACIM_ANSWER_TIME,				Hey Dude!\nWhat time is it?,															Hey Kollege!Wie spät ist es?
+STR_CW_ACIM_ANSWER_DIGUP,				I have to dig up my fields now!,														Ich muss jetzt meine Felder umgraben!
+STR_CW_ACIM_ANSWER_GOHOME,				Am I allowed do go home now?,															Darf ich jetzt nach Hause gehen?
+STR_CW_ACIM_ANSWER_WHATSUP,				Hey man!\nWhats up?!,																	Hey Alter!\nWas geht ab?!
+
+//FOUNDS
+STR_CW_ACIM_FINDS_Nothing, 				Nothing,										Nichts
+STR_CW_ACIM_FINDS_Morphine,				Morphine,										Morphium
+STR_CW_ACIM_FINDS_Cloth,				Cloth,											Stoff
+STR_CW_ACIM_FINDS_Duct Tape,			Duct Tape,										Panzerklebeband
+STR_CW_ACIM_FINDS_Toolbox,				Toolbox,										Werkzeugtasche
+STR_CW_ACIM_FINDS_Scrap Metal,			Scrap Metal,									Altmetal
+STR_CW_ACIM_FINDS_Note,					Note,											Notiz
+STR_CW_ACIM_FINDS_Mortar Shell, 		Old Mortar Shell,								Alte Mörser Granate
+STR_CW_ACIM_FINDS_Money,				Money,											Geld
+STR_CW_ACIM_FINDS_Knife,				Knife,											Messer
+STR_CW_ACIM_FINDS_Water Bottle,			Water Bottle,									Wasserflasche
+STR_CW_ACIM_FINDS_Canned Food,			Canned Food,									Dosennahrung
+STR_CW_ACIM_FINDS_C4 Explosive,			C4 Explosive,									C4 Sprengladung
+STR_CW_ACIM_FINDS_Cookbook,				Cookbook,										Kochbuch
+STR_CW_ACIM_FINDS_Baseball,				Baseball,										Baseball
+STR_CW_ACIM_FINDS_Battery,				Battery,										Batterie
+STR_CW_ACIM_FINDS_Bible,				Bible,											Biebel
+STR_CW_ACIM_FINDS_Book, 				Book,											Buch
+STR_CW_ACIM_FINDS_Car Battery,			Car Battery,									Auto Batterie
+STR_CW_ACIM_FINDS_Potato Chips,			Potato Chips,									Kartoffelchips
+STR_CW_ACIM_FINDS_Box of Cigars, 		Box of Cigars,									Zigarrenschachtel
+STR_CW_ACIM_FINDS_Cigarettes,			Cigarettes,										Zigaretten
+STR_CW_ACIM_FINDS_Clipboard,			Clipboard,										Klemmbrett
+STR_CW_ACIM_FINDS_Cooked Meat,			Cooked Meat,									Gekochtes Fleisch
+STR_CW_ACIM_FINDS_Dogtag,				Dogtag,											Hundemarke
+STR_CW_ACIM_FINDS_Folded Map,			Folded Map,										Gefaltete Karte
+STR_CW_ACIM_FINDS_Hard Drive, 			Hard Drive,										Festplatte
+STR_CW_ACIM_FINDS_Harmonica, 			Harmonica,										Mundharmonika
+STR_CW_ACIM_FINDS_Lighter, 				Lighter,										Feuerzeug
+STR_CW_ACIM_FINDS_Penicillin,			Penicillin,										Penicillin
+STR_CW_ACIM_FINDS_Raw Meat, 			Raw Meat,										Rohes Fleisch
+STR_CW_ACIM_FINDS_Rock,					Rock,											Stein
+STR_CW_ACIM_FINDS_SD Card, 				SD Card,										SD Speicherkarte
+STR_CW_ACIM_FINDS_Soda Can,				Soda Can,										Sodadose
+STR_CW_ACIM_FINDS_Teddy Bear,			Teddy Bear,										Teddybär
+STR_CW_ACIM_FINDS_Tin Can,				Tin Can,										Blechdose
+STR_CW_ACIM_FINDS_USB Drive,			USB Drive,										USB Stick
+STR_CW_ACIM_FINDS_Wallet,				Wallet,											Brieftasche
+STR_CW_ACIM_FINDS_Whiskey, 				Whiskey,										Whiskey
+STR_CW_ACIM_FINDS_Can of Paint, 		Can of Paint,									Farbdose
+STR_CW_ACIM_FINDS_Candy Bar, 			Candy Bar,										Schokoriegel
+STR_CW_ACIM_FINDS_Beer, 				Beer,											Bier
+STR_CW_ACIM_FINDS_Boltcutter,			Boltcutter,										Bolzenschneider
+STR_CW_ACIM_FINDS_Carrot, 				Carrot,											Karotte
+STR_CW_ACIM_FINDS_Cereal, 				Cereals,										Frühstücksflocken
+STR_CW_ACIM_FINDS_Coffee,				Coffee,											Kaffee
+STR_CW_ACIM_FINDS_Corn,					Corn,											Mais
+STR_CW_ACIM_FINDS_Dino Toy,				Dino Toy,										Dino Spielzeug
+STR_CW_ACIM_FINDS_Dirty Water,			Dirty Water,									Verunreinigtes Wasser
+STR_CW_ACIM_FINDS_Energy Drink,			Energy Drink,									Energieriegel
+STR_CW_ACIM_FINDS_Gum,					Bubble Gum, 									Kaugummi
+STR_CW_ACIM_FINDS_Hammer, 				Hammer,											Hammer
+STR_CW_ACIM_FINDS_Keycard, 				Keycard,										Schlüsselkarte
+STR_CW_ACIM_FINDS_Moonshine,			Moonshine,										Selbstgebrannten
+STR_CW_ACIM_FINDS_Nails,  				Nails,											Nägel
+STR_CW_ACIM_FINDS_Potato,				Potato,											Kartoffel
+STR_CW_ACIM_FINDS_Razor,				Razor,											Rasiermesser
+STR_CW_ACIM_FINDS_Sandbag, 				Sandbag,										Sandsack
+STR_CW_ACIM_FINDS_Sugar, 				Sugar,											Zucker
+STR_CW_ACIM_FINDS_Wrench, 				Wrench,											Rohrzange
+STR_CW_ACIM_FINDS_Donut,				Donut,											Donut
+STR_CW_ACIM_FINDS_Empty Bottle,			Empty Bottle,									Leere Flasche
+STR_CW_ACIM_FINDS_Gas Mask,				Gas Mask,										Gasmaske
+STR_CW_ACIM_FINDS_Laptop,				Laptop,											Laptop
+STR_CW_ACIM_FINDS_Rope, 				Rope,											Schnur
+STR_CW_ACIM_FINDS_Snoballs,				Snoballs,										Snoballs
+STR_CW_ACIM_FINDS_Tablet,				Tablet,											Tablet
+STR_CW_ACIM_FINDS_Twinkies,				Twinkies,										Twinkies
+
+
+
+
+
+
+
+
+
+
+
+
+STR_CW_ACIM_FINDS_Nothing
+STR_CW_ACIM_FINDS_Morphine
+STR_CW_ACIM_FINDS_Cloth
+STR_CW_ACIM_FINDS_Duct Tape
+STR_CW_ACIM_FINDS_Toolbox
+STR_CW_ACIM_FINDS_Scrap Metal
+STR_CW_ACIM_FINDS_Note
+STR_CW_ACIM_FINDS_Mortar Shell
+STR_CW_ACIM_FINDS_Money
+STR_CW_ACIM_FINDS_Knife
+STR_CW_ACIM_FINDS_Water Bottle
+STR_CW_ACIM_FINDS_Canned Food
+STR_CW_ACIM_FINDS_C4 Explosive
+STR_CW_ACIM_FINDS_Cookbook
+STR_CW_ACIM_FINDS_Baseball
+STR_CW_ACIM_FINDS_Battery
+STR_CW_ACIM_FINDS_Bible
+STR_CW_ACIM_FINDS_Book
+STR_CW_ACIM_FINDS_Car Battery
+STR_CW_ACIM_FINDS_Potato Chips
+STR_CW_ACIM_FINDS_Box of Cigars
+STR_CW_ACIM_FINDS_Cigarettes
+STR_CW_ACIM_FINDS_Clipboard
+STR_CW_ACIM_FINDS_Cooked Meat
+STR_CW_ACIM_FINDS_Dogtag
+STR_CW_ACIM_FINDS_Folded Map
+STR_CW_ACIM_FINDS_Hard Drive
+STR_CW_ACIM_FINDS_Harmonica
+STR_CW_ACIM_FINDS_Lighter
+STR_CW_ACIM_FINDS_Penicillin
+STR_CW_ACIM_FINDS_Raw Meat
+STR_CW_ACIM_FINDS_Rock
+STR_CW_ACIM_FINDS_SD Card
+STR_CW_ACIM_FINDS_Soda Can
+STR_CW_ACIM_FINDS_Teddy Bear
+STR_CW_ACIM_FINDS_Tin Can
+STR_CW_ACIM_FINDS_USB Drive
+STR_CW_ACIM_FINDS_Wallet
+STR_CW_ACIM_FINDS_Whiskey
+STR_CW_ACIM_FINDS_Can of Paint
+STR_CW_ACIM_FINDS_Candy Bar
+STR_CW_ACIM_FINDS_Beer
+STR_CW_ACIM_FINDS_Boltcutter
+STR_CW_ACIM_FINDS_Carrot
+STR_CW_ACIM_FINDS_Cereal
+STR_CW_ACIM_FINDS_Coffee
+STR_CW_ACIM_FINDS_Corn
+STR_CW_ACIM_FINDS_Dino Toy
+STR_CW_ACIM_FINDS_Dirty Water
+STR_CW_ACIM_FINDS_Energy Drink
+STR_CW_ACIM_FINDS_Gum
+STR_CW_ACIM_FINDS_Hammer
+STR_CW_ACIM_FINDS_Keycard
+STR_CW_ACIM_FINDS_Moonshine
+STR_CW_ACIM_FINDS_Nails
+STR_CW_ACIM_FINDS_Potato
+STR_CW_ACIM_FINDS_Razor
+STR_CW_ACIM_FINDS_Sandbag
+STR_CW_ACIM_FINDS_Sugar
+STR_CW_ACIM_FINDS_Wrench
+STR_CW_ACIM_FINDS_Donut
+STR_CW_ACIM_FINDS_Empty Bottle
+STR_CW_ACIM_FINDS_Gas Mask
+STR_CW_ACIM_FINDS_Laptop
+STR_CW_ACIM_FINDS_Rope
+STR_CW_ACIM_FINDS_Snoballs
+STR_CW_ACIM_FINDS_Tablet
+STR_CW_ACIM_FINDS_Twinkies
