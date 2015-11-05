@@ -10,7 +10,7 @@
             };
             if(side _x != west)then{
                 if(_x != cacheGroup)then{
-                    _objects = nearestObjects [(getPos (leader _x)),["Man","Car","Tank","Air"],2000];
+                    _objects = nearestObjects [(getPos (leader _x)),["Man","Car","Tank","Air"],1500];
 
                     if ((west countSide _objects) == 0)then{
                         [_x]call JOC_cache;
@@ -27,7 +27,7 @@
 []spawn{
     while {true} do {
         {
-            _objects = nearestObjects [_x select 0,["Man","Car","Tank","Air"],2000];
+            _objects = nearestObjects [_x select 0,["Man","Car","Tank","Air"],1500];
 
             if((west countSide _objects) > 0)then{
                 [_x]call JOC_unCache;

@@ -8,7 +8,6 @@ _loiterHandle = 0;
 _home = _unit getVariable "home";
 
 _unit setBehaviour "SAFE";
-doStop _unit;
 _injured = false;
 _patrol = false;
 _mosque = false;

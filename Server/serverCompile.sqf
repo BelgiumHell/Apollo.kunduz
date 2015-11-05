@@ -12,8 +12,8 @@ JOC_unCache = compileFinal preprocessFileLineNumbers "Server\AI\unCache.sqf";
 JOC_unVirtualize = compileFinal preprocessFileLineNumbers "Server\AI\unVirtualize.sqf";
 
 //Civilian
-JOC_civLoiter = compileFinal preprocessFileLineNumbers "Server\Civilian\Functions\loiter.sqf";
 JOC_civBehavior = compileFinal preprocessFileLineNumbers "Server\Civilian\behavior.sqf";
+JOC_civLoiter = compileFinal preprocessFileLineNumbers "Server\Civilian\loiter.sqf";
 JOC_spawnCivilians = compileFinal preprocessFileLineNumbers "Server\Civilian\spawnCivilians.sqf";
 
 //Core
@@ -23,6 +23,8 @@ JOC_supply = compileFinal preprocessFileLineNumbers "Server\Core\supply.sqf";
 JOC_initGenerateCompounds = compileFinal preprocessFileLineNumbers "Server\Init\generateCompounds.sqf";
 
 //Rebel
-JOC_rebelPlaceIED = compileFinal preprocessFileLineNumbers "Server\Rebel\Functions\placeIED.sqf";
 JOC_rebelCreateHideout = compileFinal preprocessFileLineNumbers "Server\Rebel\Functions\createHideout.sqf";
+JOC_rebelPlaceIED = compileFinal preprocessFileLineNumbers "Server\Rebel\Functions\placeIED.sqf";
+JOC_rebelBehaviour = compileFinal preprocessFileLineNumbers "Server\Rebel\behaviour.sqf";
+JOC_rebelPatrol = compileFinal preprocessFileLineNumbers "Server\Rebel\patrol.sqf";
 JOC_spawnRebels = compileFinal preprocessFileLineNumbers "Server\Rebel\spawnRebels.sqf";
