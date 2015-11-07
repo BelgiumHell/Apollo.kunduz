@@ -12,10 +12,9 @@ params ["_units"];
     _x hideObjectGlobal true;
 } forEach _units;
 
-cachedArray pushBack _units;
-
 _groupC = switch (side (_units select 0)) do {
     case east: {
+        cachedArray pushBack _units;
         cacheGroupEast
     };
     case civilian: {

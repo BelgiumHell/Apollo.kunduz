@@ -18,6 +18,7 @@ _units = units _group;
 
 _groupC = switch (side _group) do {
     case east: {
+        cachedArray pushBack _units;
         cacheGroupEast
     };
     case civilian: {
@@ -27,5 +28,3 @@ _groupC = switch (side _group) do {
 
 _units joinSilent _groupC;
 deleteGroup _group;
-
-cachedArray pushBack _units;

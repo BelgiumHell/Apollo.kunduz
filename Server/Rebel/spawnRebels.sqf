@@ -7,13 +7,14 @@ _i = 0;
 while{_i < ((count _houses) * (population / 4))}do{
     _house = _houses select _i;
     _positions = [_house] call BIS_fnc_buildingPositions;
-    hint "lel";
+    hideouts pushBack _house;
 
     _group = [getPos _house, east, "sof", 4, "basic"] call Zen_SpawnInfantryGarrison;
     {
         _x setVariable["hideout",_house];
         [_x]spawn JOC_rebelBehaviour;
     } forEach (units _group);
+    _house setVariable ["units", (units _group)];
     [_house]call JOC_rebelCreateHideout;
     [(units _group)]call JOC_cacheUnits;
 
