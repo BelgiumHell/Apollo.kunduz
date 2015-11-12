@@ -14,7 +14,7 @@ while{_i < ((count _houses) * population)}do{
         _x setVariable["home",_house];
         [_x]spawn JOC_civBehaviour;
     } forEach (units _group);
-    _house setVariable ["units", (units _group)];
+    _house setVariable ["units", (units _group), true];
     [(units _group)]call JOC_cacheUnits;
 
     _i = _i + 1;

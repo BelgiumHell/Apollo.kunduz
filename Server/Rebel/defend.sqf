@@ -5,7 +5,9 @@ params["_hideout"];
 
 _units = _hideout getVariable "units";
 _units = _units - [objNull];
-_group = group _units select 0;
+_group = group (_units select 0);
+
+hint "defend";
 
 [_units, getPos _hideout]spawn Zen_OrderInfantryPatrolBuilding;
 

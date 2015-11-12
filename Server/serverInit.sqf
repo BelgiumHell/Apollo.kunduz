@@ -18,10 +18,23 @@ iedArray = [];
 homes = [];
 hideouts = [];
 
-//Spawn
-[]call JOC_aiManager;
+_marker = createMarker ["mrk_area", [0,0,0]];
+"mrk_area" setMarkerShape "RECTANGLE";
+"mrk_area" setMarkerPos [worldSize/2,worldSize/2];
+"mrk_area" setMarkerSize [worldSize/2,worldSize/2];
+"mrk_area" setMarkerAlpha 0;
 
 //Call
 []call JOC_initGenerateCompounds;
 []call JOC_spawnCivilians;
 []call JOC_spawnRebels;
+
+JOC_initComplete = true;
+publicVariable "JOC_initComplete";
+[[],{
+        hint "mission loaded";
+}] remoteExec ["BIS_fnc_spawn", 0, true];
+
+//Spawn
+[]spawn JOC_aiManager;
+[]spawn JOC_managerSupply;

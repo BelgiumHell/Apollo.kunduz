@@ -10,6 +10,7 @@ JOC_cacheUnits = compileFinal preprocessFileLineNumbers "Server\AI\cacheUnits.sq
 JOC_virtualize = compileFinal preprocessFileLineNumbers "Server\AI\virtualize.sqf";
 JOC_unCache = compileFinal preprocessFileLineNumbers "Server\AI\unCache.sqf";
 JOC_unVirtualize = compileFinal preprocessFileLineNumbers "Server\AI\unVirtualize.sqf";
+JOC_HCInit = compileFinal preprocessFileLineNumbers "Server\AI\HCInit.sqf";
 
 //Civilian
 JOC_civBehaviour = compileFinal preprocessFileLineNumbers "Server\Civilian\behaviour.sqf";
@@ -22,6 +23,10 @@ JOC_supply = compileFinal preprocessFileLineNumbers "Server\Core\supply.sqf";
 //Init
 JOC_initGenerateCompounds = compileFinal preprocessFileLineNumbers "Server\Init\generateCompounds.sqf";
 
+//Manager
+JOC_managerSupply = compileFinal preprocessFileLineNumbers "Server\Manager\supply.sqf";
+JOC_managerTask = compileFinal preprocessFileLineNumbers "Server\Manager\task.sqf";
+
 //Misc
 JOC_miscIed = compileFinal preprocessFileLineNumbers "Server\Misc\ied.sqf";
 
@@ -32,3 +37,6 @@ JOC_rebelBehaviour = compileFinal preprocessFileLineNumbers "Server\Rebel\behavi
 JOC_rebelDefend = compileFinal preprocessFileLineNumbers "Server\Rebel\defend.sqf";
 JOC_rebelPatrol = compileFinal preprocessFileLineNumbers "Server\Rebel\patrol.sqf";
 JOC_spawnRebels = compileFinal preprocessFileLineNumbers "Server\Rebel\spawnRebels.sqf";
+
+//Tasks
+JOC_taskHostage = compileFinal preprocessFileLineNumbers "Server\Tasks\hostage.sqf";

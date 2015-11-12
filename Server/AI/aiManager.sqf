@@ -41,7 +41,7 @@
 //civilian uncaching
 []spawn{
     {
-        _objects = nearestObjects [getPos _x,["Man","Car","Tank","Air"],1500];
+        _objects = nearestObjects [(getPos _x),["Man","Car","Tank","Air"],1500];
 
         if((west countSide _objects) > 0)then{
             [_x getVariable "units"]call JOC_unCache;

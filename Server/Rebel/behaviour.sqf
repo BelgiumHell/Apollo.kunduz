@@ -18,7 +18,6 @@ while {alive _unit} do {
     if(!alive _hideout && !_destroyed)then{
         terminate _patrolHandle;
         _destroyed = true;
-        if(true)exitWith{};
     };
 
     //When nothing to do, patrol around
@@ -33,13 +32,6 @@ while {alive _unit} do {
         _handle = [_unit, _hideout]spawn JOC_rebelPlaceIED;
         waitUntil{scriptDone _handle};
         _ied = false;
-    };
-
-    if(!isNull (_x findNearestEnemy (getPos _hideout)) && !_defend)then{
-        terminate _patrolHandle;
-        _defend = true;
-        [_hideout]call JOC_rebelDefend;
-        _defend = false;
     };
 
     sleep 10;
