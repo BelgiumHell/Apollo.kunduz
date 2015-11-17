@@ -31,3 +31,10 @@ waitUntil {player == player};
     1,
     "<t align = 'center' shadow = '1' size = '1.0'>%1</t>"
 ] spawn BIS_fnc_typeText;
+
+//Start client loop
+[]spawn JOC_clientLoop;
+
+//Ace interaction
+viewDistanceI = ["ViewDistance","View distance","",{[]spawn CHVD_fnc_openDialog},{true}] call ace_interact_menu_fnc_createAction;
+[player, 1, ["ACE_SelfActions"], viewDistanceI] call ace_interact_menu_fnc_addActionToObject;

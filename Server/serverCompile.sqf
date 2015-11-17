@@ -14,6 +14,7 @@ JOC_HCInit = compileFinal preprocessFileLineNumbers "Server\AI\HCInit.sqf";
 
 //Civilian
 JOC_civBehaviour = compileFinal preprocessFileLineNumbers "Server\Civilian\behaviour.sqf";
+JOC_civBomber = compileFinal preprocessFileLineNumbers "Server\Civilian\bomber.sqf";
 JOC_civLoiter = compileFinal preprocessFileLineNumbers "Server\Civilian\loiter.sqf";
 JOC_spawnCivilians = compileFinal preprocessFileLineNumbers "Server\Civilian\spawnCivilians.sqf";
 
@@ -28,6 +29,7 @@ JOC_managerSupply = compileFinal preprocessFileLineNumbers "Server\Manager\suppl
 JOC_managerTask = compileFinal preprocessFileLineNumbers "Server\Manager\task.sqf";
 
 //Misc
+JOC_miscFindCenter = compileFinal preprocessFileLineNumbers "Server\Misc\findCenter.sqf";
 JOC_miscIed = compileFinal preprocessFileLineNumbers "Server\Misc\ied.sqf";
 
 //Rebel
@@ -40,3 +42,6 @@ JOC_spawnRebels = compileFinal preprocessFileLineNumbers "Server\Rebel\spawnRebe
 
 //Tasks
 JOC_taskHostage = compileFinal preprocessFileLineNumbers "Server\Tasks\hostage.sqf";
+
+//Vehicle
+JOC_vehicleSupplySelect = compileFinal preprocessFileLineNumbers "Server\Vehicle\supplySelect.sqf";

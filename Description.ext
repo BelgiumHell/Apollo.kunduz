@@ -1,7 +1,7 @@
 author = "Jochem";
 OnLoadName = "Apollo";
 OnLoadMission = "Please report any bugs to github";
-respawn = 3;
+respawn = BASE;
 respawndelay = 5;
 respawnOnStart = 0;
 respawnVehicleDelay = 0;
@@ -16,6 +16,7 @@ corpseRemovalMinTime = 180;
 corpseRemovalMaxTime = 600;
 
 #include "Scripts\CHVD\dialog.hpp"
+#include "VVS\menu.h"
 
 class Header
 {
@@ -27,4 +28,17 @@ class Header
 class CfgFunctions
 {
     #include "Scripts\CHVD\CfgFunctions.hpp"
+    #include "VVS\Functions.h"
+};
+
+class CfgSounds
+{
+	sounds[] = {};
+	class scream
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "scream_sound";
+		// filename, volume, pitch
+		sound[] = {"Data\Sounds\scream.ogg", 4, 1};
+	};
 };

@@ -32,12 +32,14 @@ class Mission
 		"A3_Soft_F_HEMTT",
 		"rhsusf_c_troops",
 		"rhsusf_c_m113",
-		"RHS_US_A2Port_Armor",
 		"DAR_MaxxPro",
 		"rhsusf_c_hmmwv",
 		"rhsusf_vehicles",
 		"RHS_US_A2_AirImport",
-		"MELB"
+		"MELB",
+		"rhsusf_c_rg33",
+		"A3_Structures_F_EPC_Items_Electronics",
+		"A3_Weapons_F_Ammoboxes"
 	};
 	addOnsAuto[]=
 	{
@@ -69,11 +71,13 @@ class Mission
 		"rhsusf_vehicles",
 		"A3_Soft_F_HEMTT",
 		"rhsusf_c_m113",
-		"RHS_US_A2Port_Armor",
+		"rhsusf_c_rg33",
 		"A3_Structures_F_Mil_Helipads",
 		"RHS_US_A2_AirImport",
 		"MELB",
 		"DAR_MaxxPro",
+		"A3_Structures_F_EPC_Items_Electronics",
+		"A3_Weapons_F_Ammoboxes",
 		"pra3_kz"
 	};
 	randomSeed=6438616;
@@ -90,8 +94,7 @@ class Mission
 		year=2015;
 		month=12;
 		day=5;
-		hour=6;
-		minute=55;
+		minute=10;
 		startFogDecay=0.013;
 		forecastFogDecay=0.013;
 	};
@@ -836,7 +839,7 @@ class Mission
 						};
 						class Item6
 						{
-							value="2.5";
+							value="1";
 							parentCls="ACE_moduleMedicalSettings";
 							typeName="AIDamageThreshold";
 						};
@@ -854,7 +857,7 @@ class Mission
 						};
 						class Item9
 						{
-							value="1";
+							value="0";
 							parentCls="ACE_moduleMedicalSettings";
 							typeName="preventInstaDeath";
 						};
@@ -1223,7 +1226,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=101;
+		items=103;
 		class Item0
 		{
 			position[]={4960.5122,4.8599968,1398.4194};
@@ -1843,6 +1846,7 @@ class Mission
 			vehicle="rhsusf_m998_d_2dr_halftop";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item62
 		{
@@ -1853,6 +1857,7 @@ class Mission
 			vehicle="rhsusf_m998_d_2dr_halftop";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item63
 		{
@@ -1873,6 +1878,7 @@ class Mission
 			vehicle="B_Truck_01_covered_F";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item65
 		{
@@ -1943,6 +1949,7 @@ class Mission
 			vehicle="B_Truck_01_covered_F";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item72
 		{
@@ -1953,6 +1960,7 @@ class Mission
 			vehicle="rhsusf_m113d_usarmy_M240";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item73
 		{
@@ -1963,6 +1971,7 @@ class Mission
 			vehicle="rhsusf_m113d_usarmy_M240";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item74
 		{
@@ -1973,6 +1982,7 @@ class Mission
 			vehicle="rhsusf_m113d_usarmy_M240";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item75
 		{
@@ -1980,9 +1990,10 @@ class Mission
 			azimut=260;
 			id=101;
 			side="EMPTY";
-			vehicle="RHS_M2A3_BUSKIII";
+			vehicle="rhsusf_rg33_m2_usmc_d";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item76
 		{
@@ -1990,9 +2001,10 @@ class Mission
 			azimut=260;
 			id=102;
 			side="EMPTY";
-			vehicle="RHS_M2A3_BUSKIII";
+			vehicle="rhsusf_rg33_m2_usmc_d";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item77
 		{
@@ -2129,6 +2141,7 @@ class Mission
 			vehicle="rhsusf_m998_d_2dr_halftop";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item91
 		{
@@ -2139,6 +2152,7 @@ class Mission
 			vehicle="rhsusf_m1025_d_m2";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item92
 		{
@@ -2149,6 +2163,7 @@ class Mission
 			vehicle="rhsusf_m1025_d_m2";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item93
 		{
@@ -2159,6 +2174,7 @@ class Mission
 			vehicle="DAR_MaxxPro_MK19";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item94
 		{
@@ -2169,6 +2185,7 @@ class Mission
 			vehicle="DAR_MaxxPro_MK19";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item95
 		{
@@ -2179,6 +2196,7 @@ class Mission
 			vehicle="DAR_MaxxProPlus";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item96
 		{
@@ -2189,6 +2207,7 @@ class Mission
 			vehicle="DAR_MaxxProPlus";
 			leader=1;
 			skill=0.60000002;
+			init="null = [this]execVM ""Server\Vehicle\vehInit.sqf"";";
 		};
 		class Item97
 		{
@@ -2230,10 +2249,30 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 		};
+		class Item101
+		{
+			position[]={4960.9233,4.8629799,1415.3973};
+			azimut=260;
+			id=127;
+			side="EMPTY";
+			vehicle="Land_Laptop_device_F";
+			leader=1;
+			skill=0.60000002;
+			text="supplyLaptop";
+		};
+		class Item102
+		{
+			position[]={4959.5918,4.8355832,1423.6693};
+			id=128;
+			side="EMPTY";
+			vehicle="Box_NATO_AmmoVeh_F";
+			skill=0.60000002;
+			init="0 = [""AmmoboxInit"",[this,true]] spawn BIS_fnc_arsenal;";
+		};
 	};
 	class Markers
 	{
-		items=4;
+		items=5;
 		class Item0
 		{
 			position[]={4870.1533,4.0436878,1412.3008};
@@ -2248,23 +2287,30 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={4892.5923,10.167411,8777.4238};
+			position[]={2396.1377,6.4744339,8769.8545};
 			name="mrk_jetEnd";
 			text="jetEnd";
 			type="Empty";
 		};
 		class Item2
 		{
-			position[]={4900.1577,12.82,-3699.3865};
+			position[]={6140.8203,12.41,-3578.2859};
 			name="mrk_jetStart";
 			text="jetStart";
 			type="Empty";
 		};
 		class Item3
 		{
-			position[]={4893.1836,6.4472723,1670.9495};
+			position[]={4847.7412,5.9157448,1326.9995};
 			name="mrk_dropZone";
 			text="dropzone";
+			type="Empty";
+		};
+		class Item4
+		{
+			position[]={4967.5337,4.873157,1429.613};
+			name="respawn_west";
+			text="BLUFOR respawn";
 			type="Empty";
 		};
 	};

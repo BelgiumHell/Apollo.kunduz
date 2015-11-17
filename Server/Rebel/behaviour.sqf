@@ -11,8 +11,6 @@ _patrol = false;
 _ied = false;
 _defend = false;
 
-//Add killed eventhandler
-
 while {alive _unit} do {
     //If hideout is destroyed, create new one
     if(!alive _hideout && !_destroyed)then{
@@ -26,9 +24,12 @@ while {alive _unit} do {
         _patrolHandle = [_unit,_hideout]spawn JOC_rebelPatrol;
     };
 
+    //
+
     if(!_ied && (count iedArray) < 30 && (random 70) < 2 && !_defend)then{
         terminate _patrolHandle;
         _ied = true;
+        _patrol = false;
         _handle = [_unit, _hideout]spawn JOC_rebelPlaceIED;
         waitUntil{scriptDone _handle};
         _ied = false;

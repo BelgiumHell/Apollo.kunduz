@@ -29,7 +29,7 @@ if (typeName _skill == "STRING") exitWith {
                 0 = [_setSkillUnits, [0.9, [0.5, 0.6], [0.1, 0.2], 1, [0.8, 0.9], [0.8, 1], 0.9, [0.8, 0.1], 1, 1]] call Zen_SetAISkill;
         };
         case "sof": {
-                0 = [_setSkillUnits, [[0.7, 0.9], [0.1, 0.12], [0.35, 0.4], 1, 1, 1, 1, 1, [0.8, 0.9], [0.5, 0.6]]] call Zen_SetAISkill;
+                0 = [_setSkillUnits, [[0.9, 0.99], [0.1, 0.12], [0.35, 0.4], 1, 1, 1, 1, 1, [0.8, 0.9], [0.5, 0.6]]] call Zen_SetAISkill;
         };
         case "officer": {
                 0 = [_setSkillUnits, [[0.1, 0.12], [0.03, 0.04], [0.1, 0.2], 1, 1, [0.5, 0.7], [0.7, 0.8], [0.4, 0.6], [0.7, 0.8], [0.4, 0.5]]] call Zen_SetAISkill;

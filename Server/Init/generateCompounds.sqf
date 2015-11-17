@@ -19,7 +19,3 @@ _housesP = ((nearestObjects [[worldSize/2,worldSize/2], ["house"], (worldSize*2^
 
 //Mosques
 mosques = nearestObjects [[worldSize/2,worldSize/2], ["Land_Jbad_A_Minaret"], (worldSize*2^0.5)];
-
-publicVariable "houses";
-publicVariable "strategic";
-publicVariable "mosques";

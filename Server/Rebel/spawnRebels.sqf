@@ -3,6 +3,7 @@
 /////////////////////////
 _houses = [houses, (count houses)]call Zen_ArrayGetRandomSequence;
 
+
 //Groups
 _i = 0;
 while{_i < ((count _houses) * (population / 4))}do{
@@ -22,7 +23,6 @@ while{_i < ((count _houses) * (population / 4))}do{
     _i = _i + 1;
 };
 
-
 //Techicals
 _i = 0;
 while{_i < ((count _houses) * (population / 7))}do{
@@ -34,6 +34,32 @@ while{_i < ((count _houses) * (population / 7))}do{
     createVehicleCrew _car;
     [[_car],"mrk_area",["mrk_safeZone"],[0,360],"full","safe"]spawn Zen_OrderVehiclePatrol;
     [(crew _car)]call JOC_cacheUnits;
+
+    _i = _i + 1;
+};
+
+//Mortars
+_housesP = [];
+_house = objNull;
+_i = 0;
+while{_i < ((count _houses) * (population / 20))}do{
+    //_pos = [0,0,["mrk_safeZone"],1,[2,300]] call Zen_FindGroundPosition;
+    _house = houses call BIS_fnc_selectRandom;
+    _housesP = [];
+    {
+        if((_x distance _house) < 75)then{
+            _housesP pushBack (getPos _x);
+        };
+    } forEach houses;
+    testV = _housesP;
+
+    _loc = [_housesP]call JOC_miscFindCenter;
+    _pos = _loc findEmptyPosition [0,300,"B_Heli_Transport_03_unarmed_F"];
+
+    _mortar = "B_G_Mortar_01_F" createVehicle _pos;
+    _group =[_pos,["CAF_AG_ME_T_AK47"]]call Zen_SpawnGroup;
+    leader _group moveInGunner _mortar;
+    [(crew _mortar)]call JOC_cacheUnits;
 
     _i = _i + 1;
 };

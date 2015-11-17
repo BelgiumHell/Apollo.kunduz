@@ -22,6 +22,6 @@ while{true}do{
         hostage = hostage - 1;
     };
 
-    waitUntil{sleep 10;!taskActive};
+    waitUntil{sleep 10; !taskActive};
     sleep 1200;
 };

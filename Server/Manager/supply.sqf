@@ -1,7 +1,7 @@
 /////////////////////////
 //Script made by Jochem//
 /////////////////////////
-cargoDrop = ["rhsusf_m1025_w_m2","rhsusf_m1025_w_m2","rhsusf_m998_d_2dr_halftop","rhsusf_m998_d_2dr_halftop"];
+cargoDrop = [];
 
 while{true}do{
     //Spawn aircraft
@@ -23,12 +23,12 @@ while{true}do{
     {
         _veh = _x createVehicle (getPosASL _plane);
         _veh setPosASL [((getPosASL _plane) select 0),(((getPosASL _plane) select 1) - 40),((getPosASL _plane) select 2)];
-        sleep 0.05;
+        sleep 0.15;
         [_veh,""]spawn Zen_SpawnParachute;
     } forEach cargoDrop;
 
     //Order to move to end point
-    [_plane,getMarkerPos "mrk_jetEnd","normal",2000]spawn Zen_OrderVehicleMove;
+    [_plane,getMarkerPos "mrk_jetEnd","full",2000]spawn Zen_OrderVehicleMove;
 
     //Delete aircraft
     waitUntil{(_plane distance2d (getMarkerPos "mrk_jetEnd")) < 500};
@@ -38,4 +38,6 @@ while{true}do{
     deleteVehicle _plane;
 
     sleep 1800;
+    hint "New supplies will be delivered in 10 minutes";
+    sleep 600;
 };

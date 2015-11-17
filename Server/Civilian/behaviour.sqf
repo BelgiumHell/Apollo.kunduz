@@ -8,13 +8,25 @@ _loiterHandle = 0;
 _home = _unit getVariable "home";
 
 _unit setBehaviour "SAFE";
+_unitCount = 0;
+_approval = random 10;
+_approvalStart = _approval;
 _injured = false;
 _patrol = false;
 _mosque = false;
 
-//Add killed eventhandler
+//sleep a bit
+sleep 10;
 
 while {alive _unit} do {
+    waitUntil{sleep 10; simulationEnabled _unit};
+
+    //Influence approval
+    if(count (units (group _unit)) < _unitCount)then{
+        _approval = _approval - (0.05 / _approvalStart);
+    };
+    _unitCount = count (units (group _unit));
+
     //If home is destroyed, join the rebels
     if(!alive _home)then{
         //[_unit]spawn JOC_civJoinRebels;
@@ -64,14 +76,16 @@ while {alive _unit} do {
         _unit doMove (getPos _mosqueB);
 
         waitUntil{sleep 5; (_unit distance _mosqueB) < 20};
-        //disableAI "MOVE";
 
         waitUntil{daytime > 9.5};
         _unit setVariable["JOC_caching_disabled",false];
-        //enableAI "MOVE";
         _mosque = false;
         _patrol = false;
     };
 
-    sleep 10;
+    //Slight chance on suicide terrorist
+    if((random 100 * _approval) < 1)then{
+        [_unit,_hideout]spawn JOC_civBomber;
+        if(true)exitWith{};
+    };
 };
