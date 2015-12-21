@@ -3,12 +3,6 @@
 /////////////////////////
 switch (_this select 1) do
 {
-	//Open CDU
-	case 210:
-	{
-		[]spawn JOC_vehCDU;
-	};
-
 	//UP -> increase height
 	case 200:
 	{

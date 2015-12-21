@@ -3,25 +3,33 @@
 /////////////////////////
 taskActive = false;
 
-hostage = 0;
+_hostage = 0;
+_hvt = 0;
 
-_tasks = ["hostage"];//All (almost)finished tasks are in here
+_tasks = ["hostage","hvt"];//All (almost)finished tasks are in here
+_task = "";
 
 sleep 60;
 
 while{true}do{
     _task = _tasks call BIS_fnc_selectRandom;
 
-    if(_task == "hostage" and hostage < 1) then{
+    if(_task == "hostage" && _hostage < 1) then{
         []spawn JOC_taskHostage;
         taskActive = true;
-        hostage = 0;
+        _hostage = 1;
+    };
+    if(_task == "hvt" && _hvt < 1) then{
+        []spawn JOC_taskHVT;
+        taskActive = true;
+        _hostage = 1;
     };
 
     if(taskActive)then{
-        hostage = hostage - 1;
-    };
+        _hostage = _hostage - 1;
+        _hvt = _hvt - 1;
 
-    waitUntil{sleep 10; !taskActive};
-    sleep 1200;
+        waitUntil{sleep 10; !taskActive};
+        sleep 1200;
+    };
 };

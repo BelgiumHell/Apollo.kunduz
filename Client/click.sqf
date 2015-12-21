@@ -11,7 +11,10 @@ onMapSingleClick{
 	_markers = allMapMarkers;
 	{
 		_distance = ((getMarkerPos _x) distance _position);
-		if((_distance < 70) and (_distance < _prevDis))then{
+		_control = (findDisplay 12) displayCtrl 51; //Arma 3
+		_scale = ctrlMapScale _control; //returns number from 1 to 0.001
+		_scale = _scale * 300;
+		if((_distance < _scale) && (_distance < _prevDis))then{
 			_prevDis = _distance;
 			_groupIdG = _x;
 		};

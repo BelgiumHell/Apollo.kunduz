@@ -14,8 +14,12 @@ _minute = _date select 4;
 _rank = rank player;
 _name = name player;
 
-_textDate = format["%3/%2/%1 - %4:%5",_year,_month,_day,_hour,_minute];
-_textName = format["%1 %2 - 1JEF",_rank,_name];
+if(_hour < 10)then{
+	_hour = format["0%1",_hour];
+};
+
+_textDate = format["%3/%2/%1 - %4%5hrs",_year,_month,_day,_hour,_minute];
+_textName = format["%1 %2 - ISAF",_rank,_name];
 waitUntil {!isNull player};
 waitUntil {player == player};
 
@@ -35,6 +39,12 @@ waitUntil {player == player};
 //Start client loop
 []spawn JOC_clientLoop;
 
+//Add clicking on mpa function
+[]call JOC_clientClick;
+
+//Set variables
+player setVariable ["captureIP", false, true];
+
 //Ace interaction
-viewDistanceI = ["ViewDistance","View distance","",{[]spawn CHVD_fnc_openDialog},{true}] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions"], viewDistanceI] call ace_interact_menu_fnc_addActionToObject;
+_viewDistanceI = ["ViewDistance","View distance","",{[]spawn CHVD_fnc_openDialog},{true}] call ace_interact_menu_fnc_createAction;
+[player, 1, ["ACE_SelfActions"], _viewDistanceI] call ace_interact_menu_fnc_addActionToObject;

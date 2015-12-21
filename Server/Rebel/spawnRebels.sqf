@@ -1,17 +1,17 @@
 /////////////////////////
 //Script made by Jochem//
 /////////////////////////
-_houses = [houses, (count houses)]call Zen_ArrayGetRandomSequence;
+_houses = [(houses - housesVillages - homes), (count (houses - housesVillages - homes))]call Zen_ArrayGetRandomSequence;
 
 
 //Groups
 _i = 0;
-while{_i < ((count _houses) * (population / 4))}do{
+while{_i < ((count houses) * (population / 4))}do{
     _house = _houses select _i;
     _positions = [_house] call BIS_fnc_buildingPositions;
     hideouts pushBack _house;
 
-    _group = [getPos _house, east, "sof", 4, "basic"] call Zen_SpawnInfantryGarrison;
+    _group = [getPos _house, east, "sof", [3,6], "basic"] call Zen_SpawnInfantryGarrison;
     {
         _x setVariable["hideout",_house];
         [_x]spawn JOC_rebelBehaviour;

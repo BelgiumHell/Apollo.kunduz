@@ -34,14 +34,14 @@ while {alive _unit} do {
     };
 
     //If night, go home
-    if((20 < daytime) OR (daytime < 5) && !_injured)then{
+    if((20 < daytime) || (daytime < 5) && !_injured)then{
         _patrol = false;
         terminate _loiterHandle;
         [_unit,getPos _home]spawn Zen_OrderInfantryPatrolBuilding;
     };
 
     //If day, wonder around
-    if(!((20 < daytime) OR (daytime < 5))  && !_injured && !_patrol && !_mosque)then{
+    if(!((20 < daytime) || (daytime < 5))  && !_injured && !_patrol && !_mosque)then{
         _patrol = true;
         _loiterHandle = [_unit,_home]spawn JOC_civLoiter;
     };
@@ -57,7 +57,7 @@ while {alive _unit} do {
     };
 
     //Go to mosque at set time
-    if(((daytime > 7) AND (daytime < 7.05))  && !_injured)then{
+    if(((daytime > 7) && (daytime < 7.05)) && !_injured)then{
         _unit setVariable["JOC_caching_disabled",true];
         {
             if((_unit distance _x) < _prevDis)then{
@@ -84,7 +84,7 @@ while {alive _unit} do {
     };
 
     //Slight chance on suicide terrorist
-    if((random 100 * _approval) < 1)then{
+    if((random 100 * _approval) < 1 && _approval < 5)then{
         [_unit,_hideout]spawn JOC_civBomber;
         if(true)exitWith{};
     };

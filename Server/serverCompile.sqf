@@ -25,6 +25,7 @@ JOC_supply = compileFinal preprocessFileLineNumbers "Server\Core\supply.sqf";
 JOC_initGenerateCompounds = compileFinal preprocessFileLineNumbers "Server\Init\generateCompounds.sqf";
 
 //Manager
+JOC_managerBft = compileFinal preprocessFileLineNumbers "Server\Manager\bft.sqf";
 JOC_managerSupply = compileFinal preprocessFileLineNumbers "Server\Manager\supply.sqf";
 JOC_managerTask = compileFinal preprocessFileLineNumbers "Server\Manager\task.sqf";
 
@@ -36,12 +37,14 @@ JOC_miscIed = compileFinal preprocessFileLineNumbers "Server\Misc\ied.sqf";
 JOC_rebelCreateHideout = compileFinal preprocessFileLineNumbers "Server\Rebel\Functions\createHideout.sqf";
 JOC_rebelPlaceIED = compileFinal preprocessFileLineNumbers "Server\Rebel\Functions\placeIED.sqf";
 JOC_rebelBehaviour = compileFinal preprocessFileLineNumbers "Server\Rebel\behaviour.sqf";
+JOC_rebelCapture = compileFinal preprocessFileLineNumbers "Server\Rebel\capture.sqf";
 JOC_rebelDefend = compileFinal preprocessFileLineNumbers "Server\Rebel\defend.sqf";
 JOC_rebelPatrol = compileFinal preprocessFileLineNumbers "Server\Rebel\patrol.sqf";
 JOC_spawnRebels = compileFinal preprocessFileLineNumbers "Server\Rebel\spawnRebels.sqf";
 
 //Tasks
 JOC_taskHostage = compileFinal preprocessFileLineNumbers "Server\Tasks\hostage.sqf";
+JOC_taskHVT = compileFinal preprocessFileLineNumbers "Server\Tasks\hvt.sqf";
 
 //Vehicle
 JOC_vehicleSupplySelect = compileFinal preprocessFileLineNumbers "Server\Vehicle\supplySelect.sqf";

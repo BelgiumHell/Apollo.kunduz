@@ -16,10 +16,10 @@ VVS_Premade_List = true;
 		VVS_Air = ["B_Heli_Light_01_armed_F"];
 */
 
-VVS_Car = ["rhsusf_m998_d_2dr_halftop","rhsusf_m1025_d_m2","DAR_MaxxPro_MK19","DAR_MaxxProPlus","rhsusf_rg33_m2_usmc_d","B_Truck_01_covered_F"];
-VVS_Air = ["RHS_UH60M_d","MELB_AH6M_M","MELB_AH6M_L"];
+VVS_Car = ["B_Truck_01_covered_F"];
+VVS_Air = ["MELB_AH6M_M","MELB_AH6M_L"];
 VVS_Ship = [];
-VVS_Armored = ["rhsusf_m113d_usarmy_M240"];
+VVS_Armored = [];
 VVS_Autonomous = [];
 VVS_Support = [];
 

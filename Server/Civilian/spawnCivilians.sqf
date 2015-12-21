@@ -1,10 +1,13 @@
 /////////////////////////
 //Script made by Jochem//
 /////////////////////////
-_houses = [houses, (count houses)]call Zen_ArrayGetRandomSequence;
+_housesI = [housesVillages, (count housesVillages)]call Zen_ArrayGetRandomSequence;
+_housesO = [(houses - housesVillages), (count (houses - housesVillages))]call Zen_ArrayGetRandomSequence;
+
+_houses = _housesI + _housesO;
 
 _i = 0;
-while{_i < ((count _houses) * population)}do{
+while{_i < ((count houses) * population)}do{
     _house = _houses select _i;
     _positions = [_house] call BIS_fnc_buildingPositions;
     homes pushBack _house;

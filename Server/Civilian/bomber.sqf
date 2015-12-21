@@ -31,16 +31,19 @@ _unit addVest "V_Chestrig_khk";
 
 _distanceT = _unit distance _target;
 
-while{_distanceT > 20 and alive _unit}do{
+while{_distanceT > 20 && alive _unit}do{
 	_unit doMove (getPos _target);
 	sleep 4;
-	hint "moving";
 	_target = _unit findNearestEnemy (getPos _unit);
 	_distanceT = _unit distance _target;
 };
 
 if(alive _unit)then{
-	_unit say ["scream", 25];
+
+    [[_unit],{
+        params["_unit"];
+        _unit say ["scream", 25];
+    }] remoteExec ["BIS_fnc_spawn", 0, true];
     sleep 1;
     _unit setDamage 1;
 };

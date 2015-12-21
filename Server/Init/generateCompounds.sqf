@@ -17,5 +17,16 @@ _housesP = ((nearestObjects [[worldSize/2,worldSize/2], ["house"], (worldSize*2^
     }
 } forEach _housesP;
 
+villages = nearestLocations [[worldSize/2,worldSize/2], ["NameVillage","NameCity","NameCityCapital"], (worldSize*2^0.5)];
+housesVillages = [];
+{
+    _house = _x;
+    {
+        if((getPos _x) distance2d _house < 325)then{
+            housesVillages pushBack _house;
+        };
+    } forEach villages;
+} forEach houses;
+
 //Mosques
 mosques = nearestObjects [[worldSize/2,worldSize/2], ["Land_Jbad_A_Minaret"], (worldSize*2^0.5)];

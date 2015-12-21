@@ -2,10 +2,14 @@
 //Script made by Jochem//
 /////////////////////////
 cargoDrop = [];
+publicVariable "cargoDrop";
 
 while{true}do{
+    //You can't change drop while aircraft is in the air
+    _cargoDrop = cargoDrop;
+
     //Spawn aircraft
-    _plane = createVehicle ["USAF_C17",getMarkerPos "mrk_jetStart", [], 0, "FLY"]; //[getMarkerPos "mrk_jetStart","USAF_C17",200]call Zen_SpawnAircraft;
+    _plane = createVehicle ["B_Plane_CAS_01_F",getMarkerPos "mrk_jetStart", [], 0, "FLY"]; //[getMarkerPos "mrk_jetStart","USAF_C17",200]call Zen_SpawnAircraft;
     _group =[getMarkerPos "mrk_jetStart",["B_Pilot_F"]]call Zen_SpawnGroup;
     {
         _x moveInDriver _plane;
@@ -25,7 +29,7 @@ while{true}do{
         _veh setPosASL [((getPosASL _plane) select 0),(((getPosASL _plane) select 1) - 40),((getPosASL _plane) select 2)];
         sleep 0.15;
         [_veh,""]spawn Zen_SpawnParachute;
-    } forEach cargoDrop;
+    } forEach _cargoDrop;
 
     //Order to move to end point
     [_plane,getMarkerPos "mrk_jetEnd","full",2000]spawn Zen_OrderVehicleMove;

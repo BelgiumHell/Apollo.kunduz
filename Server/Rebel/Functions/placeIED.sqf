@@ -3,7 +3,7 @@
 /////////////////////////
 params["_unit","_hideout"];
 
-_pos = [(getPos _hideout),[100,500],0,1,[2,300]] call Zen_FindGroundPosition;
+_pos = [(getPos _hideout),[100,500],0,1,[2,500]] call Zen_FindGroundPosition;
 
 _unit doMove _pos;
 waitUntil{sleep 2; (((_unit distance _pos) < 5) OR (!alive _unit))};
