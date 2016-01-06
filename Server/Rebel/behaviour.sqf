@@ -13,6 +13,15 @@ _nearestSurrender = [];
 while {alive _unit} do {
     waitUntil{sleep 10; simulationEnabled _unit};
 
+    //Set behaviour
+    _unit setBehaviour "SAFE";
+
+    //Check for actions not controlled by behaviour script
+    if(_unit getVariable "needed")then{
+        terminate _patrolHandle;
+        waitUntil {sleep 10; !(_unit getVariable "needed")};
+    };
+
     //Get player stats
     _nearestPlayers = [];
     _nearestSurrender = [];

@@ -17,11 +17,11 @@ VVS_Premade_List = true;
 */
 
 VVS_Car = ["B_Truck_01_covered_F"];
-VVS_Air = ["MELB_AH6M_M","MELB_AH6M_L"];
+VVS_Air = [];
 VVS_Ship = [];
 VVS_Armored = [];
 VVS_Autonomous = [];
-VVS_Support = [];
+VVS_Support = ["ACE_EarPlugs"];
 
 // def 2015 09 19> Uncomment next comment-section /* */ if you want to make this s#$t work faster and predefined (for rhs).
 /*

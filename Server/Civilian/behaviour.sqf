@@ -84,8 +84,8 @@ while {alive _unit} do {
     };
 
     //Slight chance on suicide terrorist
-    if((random 100 * _approval) < 1 && _approval < 5)then{
-        [_unit,_hideout]spawn JOC_civBomber;
+    if((random 100 * _approval) < 1 && _approval < 8)then{
+        [_unit,_home]spawn JOC_civBomber;
         if(true)exitWith{};
     };
 };

@@ -1,0 +1,8 @@
+/////////////////////////
+//Script made by Jochem//
+/////////////////////////
+params["_unit"];
+
+while{alive _unit}do{
+
+};

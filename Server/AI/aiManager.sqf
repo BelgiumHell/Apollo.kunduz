@@ -40,28 +40,14 @@
 
 //civilian uncaching
 []spawn{
-    {
-        _objects = nearestObjects [(getPos _x),["Man","Car","Tank","Air"],1500];
-
-        if((west countSide _objects) > 0)then{
-            [_x getVariable "units"]call JOC_unCache;
-        };
-    } forEach homes;
-    sleep 5;
-};
-
-/*
-//Virtualizing/unvirtualizing
-[]spawn{
     while {true} do {
         {
-            _objects = nearestObjects [(((_x select 0) select 1) select 1),["Man","Car","Tank","Air"],5000];
+            _objects = nearestObjects [(getPos _x),["Man","Car","Tank","Air"],1500];
 
             if((west countSide _objects) > 0)then{
-                [_x]call JOC_unVirtualize;
+                [(_x getVariable "units")]call JOC_unCache;
             };
-        } forEach virtualizedArray;
-        sleep 30;
+        } forEach homes;
+        sleep 5;
     };
 };
-*/

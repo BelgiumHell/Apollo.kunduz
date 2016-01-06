@@ -1,7 +1,10 @@
 /////////////////////////
 //Script made by Jochem//
 /////////////////////////
-params["_unit","_hideout"];
+params["_unit","_hidout"];
+
+_x setVariable ["hideout", _hideout];
+
 
 [_unit] call Zen_TrackInfantry;
 
@@ -22,6 +25,9 @@ _unitGroup = createGroup east;
 
 sleep 1;
 
+//Move to nearest town
+_unit doMove (getPos (nearestLocation [getPos _unit, ["NameVillage","NameCity","NameCityCapital"]]));
+
 _target = _unit findNearestEnemy (getPos _unit);
 
 _unit setSpeedMode "FULL";
@@ -30,11 +36,16 @@ _unit allowFleeing 0;
 _unit addVest "V_Chestrig_khk";
 
 _distanceT = _unit distance _target;
+_loiterHandle = 0;
 
 while{_distanceT > 20 && alive _unit}do{
 	_unit doMove (getPos _target);
 	sleep 4;
 	_target = _unit findNearestEnemy (getPos _unit);
+    if(isNull (_unit findNearestEnemy (getPos _unit)))then{
+        _loiterHandle = [_unit,_hideout]spawn JOC_rebelPatrol;
+    };
+    terminate _loiterHandle;
 	_distanceT = _unit distance _target;
 };
 

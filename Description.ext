@@ -22,7 +22,7 @@ class Header
 {
     gameType = Coop; // MP misison type
     minPlayers = 1; //min # of players the mission supports
-    maxPlayers = 50; //max # of players the mission supports
+    maxPlayers = 30; //max # of players the mission supports
 };
 
 class CfgFunctions

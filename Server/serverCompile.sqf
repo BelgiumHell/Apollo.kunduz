@@ -7,9 +7,7 @@ JOC_serverInit = compileFinal preprocessFileLineNumbers "Server\serverInit.sqf";
 JOC_aiManager = compileFinal preprocessFileLineNumbers "Server\AI\aiManager.sqf";
 JOC_cache = compileFinal preprocessFileLineNumbers "Server\AI\cache.sqf";
 JOC_cacheUnits = compileFinal preprocessFileLineNumbers "Server\AI\cacheUnits.sqf";
-JOC_virtualize = compileFinal preprocessFileLineNumbers "Server\AI\virtualize.sqf";
 JOC_unCache = compileFinal preprocessFileLineNumbers "Server\AI\unCache.sqf";
-JOC_unVirtualize = compileFinal preprocessFileLineNumbers "Server\AI\unVirtualize.sqf";
 JOC_HCInit = compileFinal preprocessFileLineNumbers "Server\AI\HCInit.sqf";
 
 //Civilian
@@ -36,15 +34,22 @@ JOC_miscIed = compileFinal preprocessFileLineNumbers "Server\Misc\ied.sqf";
 //Rebel
 JOC_rebelCreateHideout = compileFinal preprocessFileLineNumbers "Server\Rebel\Functions\createHideout.sqf";
 JOC_rebelPlaceIED = compileFinal preprocessFileLineNumbers "Server\Rebel\Functions\placeIED.sqf";
+JOC_rebelHvtbehaviourCmd = compileFinal preprocessFileLineNumbers "Server\Rebel\HVT\behaviourCmd.sqf";
+JOC_rebelHvtbehaviourField = compileFinal preprocessFileLineNumbers "Server\Rebel\HVT\behaviourField.sqf";
+JOC_rebelHvtbehaviourLt = compileFinal preprocessFileLineNumbers "Server\Rebel\HVT\behaviourLT.sqf";
 JOC_rebelBehaviour = compileFinal preprocessFileLineNumbers "Server\Rebel\behaviour.sqf";
 JOC_rebelCapture = compileFinal preprocessFileLineNumbers "Server\Rebel\capture.sqf";
 JOC_rebelDefend = compileFinal preprocessFileLineNumbers "Server\Rebel\defend.sqf";
 JOC_rebelPatrol = compileFinal preprocessFileLineNumbers "Server\Rebel\patrol.sqf";
 JOC_spawnRebels = compileFinal preprocessFileLineNumbers "Server\Rebel\spawnRebels.sqf";
 
+//Supply
+JOC_supplyMerge = compileFinal preprocessFileLineNumbers "Server\Supply\merge.sqf";
+JOC_supplySupplySelect = compileFinal preprocessFileLineNumbers "Server\Supply\supplySelect.sqf";
+
 //Tasks
 JOC_taskHostage = compileFinal preprocessFileLineNumbers "Server\Tasks\hostage.sqf";
 JOC_taskHVT = compileFinal preprocessFileLineNumbers "Server\Tasks\hvt.sqf";
 
 //Vehicle
-JOC_vehicleSupplySelect = compileFinal preprocessFileLineNumbers "Server\Vehicle\supplySelect.sqf";
+JOC_vehInit = compileFinal preprocessFileLineNumbers "Server\Vehicle\vehInit.sqf";

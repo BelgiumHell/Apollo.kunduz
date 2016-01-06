@@ -26,7 +26,7 @@ if(!isNil "_spCheck") then {deleteVehicle _spCheck;};
 
 _cfgInfo = [_className] call VVS_fnc_cfgInfo;
 */
-
+if()
 if(count cargoDrop < 5)then{
 	cargoDrop pushBack _className;
 	hint "Vehicle added";
@@ -55,4 +55,4 @@ _vehicle allowDamage true;
 hint format["You have spawned a %1",_displayName];
 */
 
-closeDialog 0;
+//closeDialog 0;

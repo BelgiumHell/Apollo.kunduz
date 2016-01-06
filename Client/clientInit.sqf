@@ -1,7 +1,6 @@
 /////////////////////////
 //Script made by Jochem//
 /////////////////////////
-
 sleep 1;
 //intro text
 _date = date;
@@ -23,6 +22,22 @@ _textName = format["%1 %2 - ISAF",_rank,_name];
 waitUntil {!isNull player};
 waitUntil {player == player};
 
+//Arsenal fix
+["Preload"]call XLA_fnc_arsenal;
+
+//Set basic loadout
+removeAllWeapons player;
+removeAllItems player;
+removeAllAssignedItems player;
+removeUniform player;
+removeVest player;
+removeBackpack player;
+removeHeadgear player;
+removeGoggles player;
+player forceAddUniform "G2_RU_MTP";
+player addVest "JPC_MC_1";
+player addHeadgear "crye_airframe_tan_AF_VAS_cover";
+
 [
 	[
 		["Apollo","<t align = 'center' shadow = '1' size = '0.6'>%1</t><br/>"],
@@ -39,8 +54,8 @@ waitUntil {player == player};
 //Start client loop
 []spawn JOC_clientLoop;
 
-//Add clicking on mpa function
-[]call JOC_clientClick;
+//Add clicking on mpa function - disabled: Ctab should be used instead
+//[]call JOC_clientClick;
 
 //Set variables
 player setVariable ["captureIP", false, true];

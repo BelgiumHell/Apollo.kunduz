@@ -6,6 +6,8 @@ _housesO = [(houses - housesVillages), (count (houses - housesVillages))]call Ze
 
 _houses = _housesI + _housesO;
 
+_house = objNull;
+
 _i = 0;
 while{_i < ((count houses) * population)}do{
     _house = _houses select _i;

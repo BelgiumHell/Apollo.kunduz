@@ -1,0 +1,119 @@
+/*
+
+    _mag = _x;
+    _found = false;
+    {
+        if(_x select 0 == _item)then{
+            _x set[1,((_x select 1) + 1)];
+            _found = true;
+        };
+    } forEach limitedMagazines;
+
+    if(!_found)then{
+        limitedMagazines pushBack [_mag,1];
+    };
+} forEach (magazineCargo _crate);
+
+{
+    _item = _x;
+    _found = false;
+    {
+        if(_x select 0 == _item)then{
+            _x set[1,((_x select 1) + 1)];
+            _found = true;
+        };
+    } forEach limitedItems;
+
+    if(!_found)then{
+        limitedItems pushBack [_item,1];
+    };
+} forEach (itemCargo _crate);
+
+publicVariable "limitedMagazines";
+publicVariable "limitedItems";
+
+
+_limitedMagazinesConverted = [];
+{
+    _limitedMagazinesConverted pushBack (_x select 0);
+} forEach limitedMagazines;
+
+_limitedItemsConverted = [];
+{
+    _limitedItemsConverted pushBack (_x select 0);
+} forEach limitedMagazines;
+
+
+
+
+
+_magazinesStart = magazines player;
+_itemsStart = items player;
+_magazinesLast = _magazinesStart;
+_itemsLast = _itemsStart;
+while{true/*!(isNull(uiNamespace getVariable ["XLA_fnc_arsenal_cam",objNull]))}do{
+	hint "check";
+
+	if(_magazinesLast != (magazines player))then{
+		_magazinesRemoved = (magazines player) - _magazinesLast;
+		_magazinesAdded = _magazinesLast - (magazines player);
+
+		hint str _magazinesAdded;
+		{
+		    _mag = _x;
+		    {
+		        if(_x select 0 == _mag)then{
+		            _x set[1,(_x select 1 - 1)];
+					if((_x select 1) == 0)then{
+						[_box,[_mag],true] call XLA_fnc_removeVirtualMagazineCargo;
+					};
+		        };
+		    } forEach limitedMagazines;
+		} forEach _magazinesRemoved;
+
+		{
+		    _mag = _x;
+		    {
+		        if(_x select 0 == _mag)then{
+		            _x set[1,(_x select 1 + 1)];
+
+		        };
+		    } forEach limitedMagazines;
+		} forEach _magazinesAdded;
+		publicVariable "limitedMagazines";
+		publicVariable "limitedItems";
+		_magazinesLast = (magazines player);
+	};
+
+
+	if(_itemsLast != (items player))then{
+		_itemsRemoved = (items player) - _itemsLast;
+		_itemsAdded = _itemsLast - (items player);
+
+		{
+		    _item = _x;
+		    {
+		        if(_x select 0 == _item)then{
+		            _x set[1,(_x select 1 - 1)];
+					if((_x select 1) == 0)then{
+						[_box,[_item],true] call XLA_fnc_removeVirtualItemCargo;
+					};
+		        };
+		    } forEach limitedItems;
+		} forEach _itemsRemoved;
+
+		{
+		    _item = _x;
+		    {
+		        if(_x select 0 == _item)then{
+		            _x set[1,(_x select 1 + 1)];
+		        };
+		    } forEach limitedItems;
+		} forEach _itemsAdded;
+		publicVariable "limitedMagazines";
+		publicVariable "limitedItems";
+		_itemsLast = (items player);
+	};
+
+	sleep 0.1;
+};*/

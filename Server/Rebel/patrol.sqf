@@ -10,9 +10,7 @@ while{alive _unit}do{
         _unit doMove _pos;
         (group _unit) setBehaviour "SAFE";
         (group _unit) setSpeedMode "LIMITED";
-        (group _unit) setCombatMode "YELLOW";
-        //waitUntil{sleep 5; !(isNull(_unit findNearestEnemy (getPos _unit)))};
-        //[_unit,_hideout]call JOC_rebelDefense;
+        (group _unit) setCombatMode "WHITE";
         sleep 120;
     };
 };

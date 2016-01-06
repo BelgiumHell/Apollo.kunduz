@@ -17,11 +17,15 @@ _target setVariable ["captureIP", true, true];
 _unit doMove (getPos _target);
 _unit setBehaviour "AWARE";
 
-waitUntil{(_unit distance _target) < 3};
+waitUntil{(_unit distance _target) < 3 || !(_target getVariable "captureIP")};
+if(!(_target getVariable "captureIP"))exitWith{};
 [_target, true, (random 500 + 487)]call ace_medical_fnc_setUnconscious;
 [_unit,_target]call ace_dragging_fnc_startCarry;
 
-sleep 3;
+sleep 20;
+
+//Server side only so unit can move
+_unit playMove "";
 
 _unit doMove (getPos (_unit getVariable "hideout"));
 _unit setBehaviour "SAFE";

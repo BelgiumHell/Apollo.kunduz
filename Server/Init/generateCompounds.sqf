@@ -7,7 +7,6 @@ strategic = nearestObjects [[worldSize/2,worldSize/2], ["Land_BagBunker_Small_F"
 "Land_Cargo_Tower_V1_No3_F","Land_Cargo_Tower_V1_No4_F","Land_Cargo_Tower_V1_No5_F","Land_Cargo_Tower_V1_No6_F","Land_Cargo_Tower_V1_No7_F","Land_Cargo_Tower_V2_F","Land_Cargo_Tower_V3_F"], (worldSize*2^0.5)];
 
 //Houses
-houses = [];
 _housesB = nearestObjects [[worldSize/2,worldSize/2], ["Land_MilOffices_V1_F","Land_nav_pier_m_F","Land_Pier_addon","Land_Pier_Box_F","Land_Pier_F","Land_Pier_small_F","Land_Pier_wall_F"], (worldSize*2^0.5)];
 _housesP = ((nearestObjects [[worldSize/2,worldSize/2], ["house"], (worldSize*2^0.5)]) - strategic - _housesB);
 
@@ -22,7 +21,7 @@ housesVillages = [];
 {
     _house = _x;
     {
-        if((getPos _x) distance2d _house < 325)then{
+        if((getPos _x) distance2d _house < 450)then{
             housesVillages pushBack _house;
         };
     } forEach villages;

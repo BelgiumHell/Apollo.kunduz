@@ -1,7 +1,7 @@
 /*
 	File: fn_mainDisplay.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Main functionality for the VVS Menu Display. Handles filters and more.
 */
@@ -39,7 +39,7 @@ if(_mode == "All") then
 		lbAdd[38102,_x];
 		lbSetData[38102,(lbSize 38102)-1,_x];
 	} foreach ["All","Car","Air","Ship","Armored","Autonomous","Support"];
-	
+
 	lbSetCurSel[38102,0];
 }
 	else
@@ -47,7 +47,7 @@ if(_mode == "All") then
 	ctrlShow[38102,false]; //Hide it.
 	_row = 0;
 	_vehicleList = [_mode] call VVS_fnc_filterType;
-	
+
 	if(count _vehicleList == 0) exitWith {hint "There was an error and no vehicles could be fetched!"};
 	{
 		_cfgInfo = [_x] call VVS_fnc_cfgInfo;

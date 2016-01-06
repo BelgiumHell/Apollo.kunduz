@@ -1,7 +1,7 @@
 /*
 	File: fn_filterList.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Refreshes the filtering list.
 */
