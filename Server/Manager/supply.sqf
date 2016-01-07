@@ -1,7 +1,7 @@
 /////////////////////////
 //Script made by Jochem//
 /////////////////////////
-supplyDrop = [];
+supplyDrop = "Day";
 publicVariable "supplyDrop";
 
 [[],{

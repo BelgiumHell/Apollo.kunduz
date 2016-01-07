@@ -24,6 +24,7 @@ while{alive _unit}do{
             _units = _x getVariable "units";
             {
                 _x setVariable ["needed", true];
+                (leader (group _x)) setVariable ["JOC_caching_disabled", true, true];
             } forEach _units;
             _units pushBack _unitsAttending;
         };
@@ -42,6 +43,7 @@ while{alive _unit}do{
     if(!alive _unit)then{
         {
             _x setVariable ["needed", false];
+            (leader (group _x)) setVariable ["JOC_caching_disabled", false, true];
         } forEach _unitsAttending;
     };
 
@@ -49,6 +51,7 @@ while{alive _unit}do{
 
     {
         _x setVariable ["needed", false];
+        (leader (group _x)) setVariable ["JOC_caching_disabled", false, true];
     } forEach _unitsAttending;
 
     //End meeting
