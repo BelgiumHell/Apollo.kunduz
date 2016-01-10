@@ -37,10 +37,10 @@ _marker = createMarker ["mrk_area", [0,0,0]];
 "mrk_area" setMarkerAlpha 0;
 
 //Call
+[]call JOC_supplySupplySelect;
 []call JOC_initGenerateCompounds;
 []call JOC_spawnCivilians;
 []call JOC_spawnRebels;
-[]call JOC_supplySupplySelect;
 
 JOC_initComplete = true;
 publicVariable "JOC_initComplete";

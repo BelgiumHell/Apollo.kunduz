@@ -2,79 +2,66 @@
 //Script made by Jochem//
 /////////////////////////
 params["_unit"];
-_patrolHandle = 0;
-_hideout = _unit getVariable "hideout";
 
-_unit setBehaviour "SAFE";
-_patrol = false;
+hint "behave";
+
+_hideout = _unit getVariable "hideout";
+_handle = scriptNull;
+_patrolHandle = scriptNull;
 _nearestPlayers = [];
 _nearestSurrender = [];
 
 while {alive _unit} do {
     waitUntil{sleep 10; simulationEnabled _unit};
 
-    //Set behaviour
-    _unit setBehaviour "SAFE";
-
-    //Check for actions not controlled by behaviour script
-    if(_unit getVariable "needed")then{
-        terminate _patrolHandle;
-        waitUntil {sleep 10; !(_unit getVariable "needed")};
-    };
-
-    //Get player stats
     _nearestPlayers = [];
     _nearestSurrender = [];
     {
-        if (isPlayer _x && (_x distance _unit) < 500)then {
-            _nearestPlayers pushBack _x;
-            if(captive _x)then{
-                _nearestSurrender pushBack _x;
+        if((_x distance _unit) < 500)then{
+            if(_unit knowsAbout _x)then{
+                _nearestPlayers pushBack _x;
+                if(captive _x)then{
+                    _nearestSurrender pushBack _x;
+                };
             };
         };
     } forEach (playableUnits + switchableUnits);
 
-    //If hideout is destroyed, create new one
-    if(!alive _hideout && !_destroyed)then{
-        terminate _patrolHandle;
-        _patrol = false;
-        //_destroyed = true;
-    };
+    hint str _nearestPlayers;
 
-    //When nothing to do, patrol around
-    if(!_patrol && (behaviour _unit) != "COMBAT")then{
-        _patrol = true;
-        _patrolHandle = [_unit,_hideout]spawn JOC_rebelPatrol;
-    };
-
-    //When player surrender, capture him (if no active enemies nearby)
-    if((count _nearestSurrender > 0) && (count _nearestSurrender == count _nearestPlayers) && !((_nearestSurrender select 0) getVariable "captureIP"))then{
-        hint "capture";
-        terminate _patrolHandle;
-        _patrol = false;
-        _handle = [_unit,(_nearestSurrender select 0)]spawn JOC_rebelCapture;
-        sleep 10;
-        waitUntil{scriptDone _handle || !((_nearestSurrender select 0) getVariable "captureIP" || !alive _unit)};
+    //Behaviour
+    //Check for combat
+    if(count _nearestPlayers > 1)then{
         terminate _handle;
-        if(!alive _unit)then{
-            (_nearestSurrender select 0) setCaptive false;
+        terminate _patrolHandle;
+        _handle = [_unit]spawn JOC_rebelDefend;
+        waitUntil {sleep 10; scriptDone _handle};
+    }else{
+        if(_unit getVariable "needed")then{
+            waitUntil {sleep 10; !(_unit getVariable "needed")};
+        }else{
+            hint str ((count _nearestSurrender) > 0 && (scriptDone _handle));
+            //When player surrender, capture him (if no active enemies nearby)
+            if((count _nearestSurrender) > 0 && (scriptDone _handle))then{
+                if(!((_nearestSurrender select 0) getVariable "captureIP"))then{
+                    terminate _patrolHandle;
+                    _handle = [_unit,(_nearestSurrender select 0)]spawn JOC_rebelCapture;
+                };
+            }else{
+                //Place ied on chance
+                if((count iedArray) < 30 && (random 70) < 2 && (scriptDone _handle))then{
+                    terminate _patrolHandle;
+                    _handle = [_unit, _hideout]spawn JOC_rebelPlaceIED;
+                }else{
+                    //Else just patrol
+                    if(scriptDone _handle)then{
+                        _patrolHandle = [_unit,_hideout]spawn JOC_rebelPatrol;
+                    };
+                };
+            };
         };
     };
 
-    //Place ied
-    if((count iedArray) < 30 && (random 70) < 2)then{
-        terminate _patrolHandle;
-        _patrol = false;
-        _handle = [_unit, _hideout]spawn JOC_rebelPlaceIED;
-        waitUntil{scriptDone _handle};
-    };
-
-    if(!(isNull (_unit findNearestEnemy (getPos _hideout))) && ((getPos _hideout) distance (_unit findNearestEnemy (getPos _hideout))) < 900)then{
-        terminate _patrolHandle;
-        _patrol = false;
-        _handle = [_unit]spawn JOC_rebelDefend;
-        waitUntil{scriptDone _handle};
-    };
 
     waitUntil{sleep 10; simulationEnabled _unit};
 };

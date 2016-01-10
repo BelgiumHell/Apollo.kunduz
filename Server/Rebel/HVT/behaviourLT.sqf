@@ -4,16 +4,12 @@
 params["_unit"];
 
 _group = group _unit;
-_hideout = unit getVariable "hideout";
+_hideout = _unit getVariable "hideout";
 _unitsAttending = [];
 
 while{alive _unit}do{
     sleep (round (random 2));
     _unitsAttending = [];
-
-    //Debugging
-    hint "meeting";
-    officerTest = _unit;
 
     //Get meeting place
     _place = hideouts call BIS_fnc_selectRandom;

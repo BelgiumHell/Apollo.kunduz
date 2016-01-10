@@ -21,7 +21,7 @@ housesVillages = [];
 {
     _house = _x;
     {
-        if((getPos _x) distance2d _house < 450)then{
+        if((getPos _x) distance2d _house < 400)then{
             housesVillages pushBack _house;
         };
     } forEach villages;

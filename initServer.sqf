@@ -7,4 +7,4 @@
 JOC_initComplete = false;
 publicVariable "JOC_initComplete";
 
-[]call JOC_serverInit;
+//[]call JOC_serverInit;

@@ -3611,21 +3611,21 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={2396.1377,6.4744339,8769.8545};
+			position[]={5074.1523,8.0493212,8686.5986};
 			name="mrk_jetEnd";
 			text="jetEnd";
 			type="Empty";
 		};
 		class Item2
 		{
-			position[]={6140.8203,12.41,-3578.2859};
+			position[]={43.420654,119.5536,-3653.9729};
 			name="mrk_jetStart";
 			text="jetStart";
 			type="Empty";
 		};
 		class Item3
 		{
-			position[]={4823.0054,4.83251,1355.1611};
+			position[]={2697.2368,8.1287394,2490.4717};
 			name="mrk_dropZone";
 			text="dropzone";
 			type="Empty";

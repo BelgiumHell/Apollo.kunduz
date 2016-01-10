@@ -1,18 +1,20 @@
 /////////////////////////
 //Script made by Jochem//
 /////////////////////////
+supplyDrop = "Day";
+publicVariable "supplyDrop";
 
 [[],{
     _action_supply = ["supply", "Supply", "", {true}, {true}] call ace_interact_menu_fnc_createAction;
 
     _action_supplyChoose = ["chooseDrop", "Choose drop", "", {true}, {true}] call ace_interact_menu_fnc_createAction;
-    _action_supplyChooseCoyote = ["chooseDropCoyote", "2x Coyote", "", {supplyDrop = "Coyote"}, {true}] call ace_interact_menu_fnc_createAction;
-    _action_supplyChooseJackel = ["chooseDropJackel", "2x Jackel", "", {supplyDrop = "Jackel"}, {true}] call ace_interact_menu_fnc_createAction;
-    _action_supplyChooseApache = ["chooseDropApache", "1x Apache", "", {supplyDrop = "Apache"}, {true}] call ace_interact_menu_fnc_createAction;
-    _action_supplyChooseMerlin = ["chooseDropMerlin", "1x Merlin", "", {supplyDrop = "Merlin"}, {true}] call ace_interact_menu_fnc_createAction;
-    _action_supplyChooseDay = ["chooseDropDay", "Ammunition: Day", "", {supplyDrop = "Day"}, {true}] call ace_interact_menu_fnc_createAction;
-    _action_supplyChooseNight = ["chooseDropNight", "Ammunition: Night", "", {supplyDrop = "Night"}, {true}] call ace_interact_menu_fnc_createAction;
-    _action_supplyChooseMedical = ["chooseDropMedical", "Medical", "", {supplyDrop = "Medical"}, {true}] call ace_interact_menu_fnc_createAction;
+    _action_supplyChooseCoyote = ["chooseDropCoyote", "2x Coyote", "", {supplyDrop = "Coyote"; publicVariable "supplyDrop";}, {true}] call ace_interact_menu_fnc_createAction;
+    _action_supplyChooseJackel = ["chooseDropJackel", "2x Jackel", "", {supplyDrop = "Jackel"; publicVariable "supplyDrop";}, {true}] call ace_interact_menu_fnc_createAction;
+    _action_supplyChooseApache = ["chooseDropApache", "1x Apache", "", {supplyDrop = "Apache"; publicVariable "supplyDrop";}, {true}] call ace_interact_menu_fnc_createAction;
+    _action_supplyChooseMerlin = ["chooseDropMerlin", "1x Merlin", "", {supplyDrop = "Merlin"; publicVariable "supplyDrop";}, {true}] call ace_interact_menu_fnc_createAction;
+    _action_supplyChooseDay = ["chooseDropDay", "Ammunition: Day", "", {supplyDrop = "Day"; publicVariable "supplyDrop";}, {true}] call ace_interact_menu_fnc_createAction;
+    _action_supplyChooseNight = ["chooseDropNight", "Ammunition: Night", "", {supplyDrop = "Night"; publicVariable "supplyDrop";}, {true}] call ace_interact_menu_fnc_createAction;
+    _action_supplyChooseMedical = ["chooseDropMedical", "Medical", "", {supplyDrop = "Medical"; publicVariable "supplyDrop";}, {true}] call ace_interact_menu_fnc_createAction;
 
     _action_supplyCheck = ["checkDrop", "Current drop", "", {hint supplyDrop}, {true}] call ace_interact_menu_fnc_createAction;
 

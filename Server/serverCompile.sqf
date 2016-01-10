@@ -11,9 +11,12 @@ JOC_unCache = compileFinal preprocessFileLineNumbers "Server\AI\unCache.sqf";
 JOC_HCInit = compileFinal preprocessFileLineNumbers "Server\AI\HCInit.sqf";
 
 //Civilian
+JOC_civAid = compileFinal preprocessFileLineNumbers "Server\Civilian\aid.sqf";
 JOC_civBehaviour = compileFinal preprocessFileLineNumbers "Server\Civilian\behaviour.sqf";
 JOC_civBomber = compileFinal preprocessFileLineNumbers "Server\Civilian\bomber.sqf";
+JOC_civjoinRebels = compileFinal preprocessFileLineNumbers "Server\Civilian\joinRebels.sqf";
 JOC_civLoiter = compileFinal preprocessFileLineNumbers "Server\Civilian\loiter.sqf";
+JOC_civMosque = compileFinal preprocessFileLineNumbers "Server\Civilian\mosque.sqf";
 JOC_spawnCivilians = compileFinal preprocessFileLineNumbers "Server\Civilian\spawnCivilians.sqf";
 
 //Core
@@ -34,6 +37,8 @@ JOC_miscIed = compileFinal preprocessFileLineNumbers "Server\Misc\ied.sqf";
 //Rebel
 JOC_rebelCreateHideout = compileFinal preprocessFileLineNumbers "Server\Rebel\Functions\createHideout.sqf";
 JOC_rebelPlaceIED = compileFinal preprocessFileLineNumbers "Server\Rebel\Functions\placeIED.sqf";
+JOC_rebelHvtAmbush = compileFinal preprocessFileLineNumbers "Server\Rebel\HVT\ambush.sqf";
+JOC_rebelHvtAttack = compileFinal preprocessFileLineNumbers "Server\Rebel\HVT\attack.sqf";
 JOC_rebelHvtbehaviourCmd = compileFinal preprocessFileLineNumbers "Server\Rebel\HVT\behaviourCmd.sqf";
 JOC_rebelHvtbehaviourField = compileFinal preprocessFileLineNumbers "Server\Rebel\HVT\behaviourField.sqf";
 JOC_rebelHvtbehaviourLt = compileFinal preprocessFileLineNumbers "Server\Rebel\HVT\behaviourLT.sqf";

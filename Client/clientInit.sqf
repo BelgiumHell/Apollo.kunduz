@@ -59,6 +59,16 @@ player addHeadgear "crye_airframe_tan_AF_VAS_cover";
 
 //Set variables
 player setVariable ["captureIP", false, true];
+player setVariable ["combat", false, true];
+
+//EH
+player addEventHandler ["Fired", {
+	[]spawn{
+		player setVariable ["combat", true, true];
+		sleep 400;
+		player setVariable ["combat", false, true];
+	};
+}]
 
 //Ace interaction
 _viewDistanceI = ["ViewDistance","View distance","",{[]spawn CHVD_fnc_openDialog},{true}] call ace_interact_menu_fnc_createAction;
