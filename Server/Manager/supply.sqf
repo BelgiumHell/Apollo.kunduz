@@ -24,7 +24,7 @@ while{true}do{
     } forEach (crew _plane);
 
     //Order aircraft move
-    [_plane,getMarkerPos "mrk_dropzone","limited",500]spawn Zen_OrderVehicleMove;
+    [_plane,getMarkerPos "mrk_dropzone","limited",1500]spawn Zen_OrderVehicleMove;
     waitUntil{(_plane distance2D (getMarkerPos "mrk_dropZone")) < 100};
 
     //Drop cargo

@@ -33,6 +33,7 @@ JOC_managerTask = compileFinal preprocessFileLineNumbers "Server\Manager\task.sq
 //Misc
 JOC_miscFindCenter = compileFinal preprocessFileLineNumbers "Server\Misc\findCenter.sqf";
 JOC_miscIed = compileFinal preprocessFileLineNumbers "Server\Misc\ied.sqf";
+JOC_miscNearestPlants = compileFinal preprocessFileLineNumbers "Server\Misc\nearestPlants.sqf";
 
 //Rebel
 JOC_rebelCreateHideout = compileFinal preprocessFileLineNumbers "Server\Rebel\Functions\createHideout.sqf";

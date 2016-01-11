@@ -16,7 +16,7 @@ sleep (7200 - _timeNeeded);
 _mosque = true;
 terminate _loiterHandle;
 
-_buildings = nearestObjects [(getPos _mosque), ["Land_Jbad_A_Minaret"], 75];
+_buildings = nearestObjects [(getPos _mosque), ["Land_Jbad_A_Mosque_small_1"], 100];
 _building = _buildings call BIS_fnc_selectRandom;
 
 [_unit,getPos _building]spawn Zen_OrderInfantryPatrolBuilding;
