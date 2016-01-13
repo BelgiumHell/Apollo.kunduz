@@ -68,7 +68,7 @@ player addEventHandler ["Fired", {
 		sleep 400;
 		player setVariable ["combat", false, true];
 	};
-}]
+}];
 
 //Ace interaction
 _viewDistanceI = ["ViewDistance","View distance","",{[]spawn CHVD_fnc_openDialog},{true}] call ace_interact_menu_fnc_createAction;

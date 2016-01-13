@@ -8,7 +8,7 @@ _hideout = _unit getVariable "hideout";
 _unitsAttending = [];
 
 while{alive _unit}do{
-    sleep (round (random 2));
+    sleep (round (random 7200));
     _unitsAttending = [];
 
     //Get meeting place

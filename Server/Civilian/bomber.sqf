@@ -8,11 +8,12 @@ _x setVariable ["hideout", _hideout];
 
 [_unit] call Zen_TrackInfantry;
 
+//when killed, BOOM
 _unit addEventHandler["killed", {
     _bomb = "Bo_GBU12_LGB" createVehicle getPos (_this select 0);
 }];
 
-while{(alive _unit) && (_unit distance _hideout) > 20}do{
+while{(alive _unit) && (_unit distance _hideout) > 5}do{
     _unit doMove (getPos _hideout);
     sleep 120;
 };
@@ -28,32 +29,36 @@ sleep 1;
 //Move to nearest town
 _unit doMove (getPos (nearestLocation [getPos _unit, ["NameVillage","NameCity","NameCityCapital"]]));
 
-_target = _unit findNearestEnemy (getPos _unit);
-
 _unit setSpeedMode "FULL";
 _unit allowFleeing 0;
 
 _unit addVest "V_Chestrig_khk";
 
-_distanceT = _unit distance _target;
-_loiterHandle = 0;
+_target = objNull;
+_distanceT = 999;
+_loiterHandle = scriptNull;
 
 while{_distanceT > 20 && alive _unit}do{
-	_unit doMove (getPos _target);
 	sleep 4;
+
 	_target = _unit findNearestEnemy (getPos _unit);
-    if(isNull (_unit findNearestEnemy (getPos _unit)))then{
+    _unit doMove (getPos _target);
+
+    if(isNull _target && scriptDone _loiterHandle)then{
         _loiterHandle = [_unit,_hideout]spawn JOC_rebelPatrol;
+        _distanceT = 999;
+    }else{
+        terminate _loiterHandle;
+        _unit doMove (getPos _target);
+        _distanceT = _unit distance _target;
     };
-    terminate _loiterHandle;
-	_distanceT = _unit distance _target;
 };
 
 if(alive _unit)then{
 
     [[_unit],{
         params["_unit"];
-        _unit say ["scream", 25];
+        _unit say3D "scream";
     }] remoteExec ["BIS_fnc_spawn", 0, true];
     sleep 1;
     _unit setDamage 1;

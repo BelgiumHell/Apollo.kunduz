@@ -10,7 +10,7 @@ _handle = scriptNull;
 _home = _unit getVariable "home";
 
 _unit setBehaviour "SAFE";
-_unitCount = 0;
+_unitCount = count (units (group _unit));
 _approval = random 10;
 _approvalStart = _approval;
 
@@ -22,7 +22,7 @@ while {alive _unit} do {
 
     //Influence approval
     if(count (units (group _unit)) < _unitCount)then{
-        _approval = _approval - (30 / _approvalStart);
+        _approval = _approval - (15 / _approvalStart);
     };
     _unitCount = count (units (group _unit));
 

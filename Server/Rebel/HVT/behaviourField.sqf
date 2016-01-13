@@ -8,6 +8,8 @@ _outposts = [];
 _town = 0;
 
 while{alive _unit}do{
+    sleep (round(random 5400));
+    
     //Ceck for activity to do
     _towns = [];
     {
@@ -35,6 +37,4 @@ while{alive _unit}do{
     waitUntil {sleep 10; scriptDone _handle};
 
     _unit doMove (getPos _hideout);
-
-    sleep (round(random 5400));
 };

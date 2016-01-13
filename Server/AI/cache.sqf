@@ -16,15 +16,13 @@ _units = units _group;
     _x hideObjectGlobal true;
 } forEach _units;
 
-_groupC = switch (side _group) do {
+switch (side _group) do {
     case east: {
         cachedArray pushBack _units;
-        cacheGroupEast
+        _units joinSilent cacheGroupEast;
+        deleteGroup _group;
     };
     case civilian: {
-        cacheGroupCiv
+        
     };
 };
-
-_units joinSilent _groupC;
-deleteGroup _group;
