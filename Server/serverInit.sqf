@@ -63,7 +63,7 @@ publicVariable "JOC_initComplete";
         _items = nearestObjects [(getMarkerPos "mrk_area"), ["WeaponHolder","GroundWeaponHolder","WeaponHolderSimulated","SmokeShell","TimeBombCore"], 10000];
         {
         	_nearestPlayers = [];
-        	_location = (getPos this);
+        	_location = (getPos _x);
             {
                 if (isPlayer _x && _x distance _location < 500) then {
                     _nearestPlayers pushBack _x;
@@ -80,14 +80,14 @@ publicVariable "JOC_initComplete";
         }forEach _items;
         {
         	_nearestPlayers = [];
-        	_location = (getPos this);
+        	_location = (getPos _x);
             {
-                if (isPlayer _x && _x distance _location < 500) then {
+                if (isPlayer _x && (_x distance _location) < 500) then {
                     _nearestPlayers pushBack _x;
                 };
             } forEach (playableUnits + switchableUnits);
 
-            if(count _nearestPlayers == 0 or (_x distance respawn_obj) < 100)then{
+            if(count _nearestPlayers == 0 or (_x distance (getMarkerPos "respawn_west")) < 100)then{
         		_pad = (_x getVariable "pad");
         		_pad setVariable["count",((_pad getVariable "count") - 1),true];
         		deleteVehicle _x;

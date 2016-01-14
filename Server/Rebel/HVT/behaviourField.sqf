@@ -6,10 +6,11 @@ _hideout = _unit getVariable "hideout";
 _towns = [];
 _outposts = [];
 _town = 0;
+_handle = scriptNull;
 
 while{alive _unit}do{
     sleep (round(random 5400));
-    
+
     //Ceck for activity to do
     _towns = [];
     {

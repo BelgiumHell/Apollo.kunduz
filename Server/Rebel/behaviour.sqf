@@ -18,7 +18,7 @@ while {alive _unit} do {
     _nearestSurrender = [];
     {
         if((_x distance _unit) < 500)then{
-            if(_unit knowsAbout _x)then{
+            if(_unit knowsAbout _x > 2)then{
                 _nearestPlayers pushBack _x;
                 if(captive _x)then{
                     _nearestSurrender pushBack _x;
@@ -40,7 +40,6 @@ while {alive _unit} do {
         if(_unit getVariable "needed")then{
             waitUntil {sleep 10; !(_unit getVariable "needed")};
         }else{
-            hint str ((count _nearestSurrender) > 0 && (scriptDone _handle));
             //When player surrender, capture him (if no active enemies nearby)
             if((count _nearestSurrender) > 0 && (scriptDone _handle))then{
                 if(!((_nearestSurrender select 0) getVariable "captureIP"))then{

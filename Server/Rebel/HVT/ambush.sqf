@@ -1,7 +1,7 @@
 /////////////////////////
 //Script made by Jochem//
 /////////////////////////
-params["_officer"]
+params["_officer"];
 
 //Get nearby units to join meeting
 _unitsAttending = [];
@@ -28,7 +28,7 @@ sleep 30;
 } forEach _unitsAttending;
 (group _officer) move (getPos _ambushLoc);
 
-waitUntil {sleep 2; ((west countSide (nearestObjects [_x select 0,["Man","Car","Tank","Air"],100])) > 1)};
+waitUntil {sleep 2; ((west countSide (nearestObjects [_officer,["Man","Car","Tank","Air"],100])) > 1)};
 
 {
     if(_x == (leader (group _x)))then{

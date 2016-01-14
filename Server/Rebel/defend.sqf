@@ -5,7 +5,7 @@ params["_hideout","_unit"];
 
 _group = group (_units select 0);
 _safe = true;
-_roeHandle : scriptNull;
+_roeHandle = scriptNull;
 
 if(_unit == leader (group _unit))then{
     _units = _hideout getVariable "units";

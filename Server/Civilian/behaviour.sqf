@@ -20,11 +20,13 @@ sleep 10;
 while {alive _unit} do {
     waitUntil{sleep 10; simulationEnabled _unit};
 
+    /*
     //Influence approval
     if(count (units (group _unit)) < _unitCount)then{
         _approval = _approval - (15 / _approvalStart);
     };
     _unitCount = count (units (group _unit));
+    */
 
     //If home is destroyed, join the rebels
     if(!alive _home)then{

@@ -3,6 +3,7 @@
 /////////////////////////
 params["_unit"];
 
+_prevDis = 99999;
 _unit setVariable["JOC_caching_disabled",true];
 {
     if((_unit distance _x) < _prevDis)then{

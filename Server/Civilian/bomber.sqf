@@ -1,7 +1,7 @@
 /////////////////////////
 //Script made by Jochem//
 /////////////////////////
-params["_unit","_hidout"];
+params["_unit","_hideout"];
 
 _x setVariable ["hideout", _hideout];
 
@@ -17,8 +17,6 @@ while{(alive _unit) && (_unit distance _hideout) > 5}do{
     _unit doMove (getPos _hideout);
     sleep 120;
 };
-_unit doMove (getPos _hideout);
-
 
 _unitGroup = createGroup east;
 [_unit] joinSilent grpNull;
@@ -27,7 +25,12 @@ _unitGroup = createGroup east;
 sleep 1;
 
 //Move to nearest town
-_unit doMove (getPos (nearestLocation [getPos _unit, ["NameVillage","NameCity","NameCityCapital"]]));
+_townPos = (getPos ((nearestLocations [getPos _unit, ["NameVillage","NameCity","NameCityCapital"], (worldSize*2^0.5)]) select 0));
+while{(alive _unit) && (_unit distance _townPos) > 100}do{
+    _unit doMove (getPos _townPos);
+    sleep 120;
+};
+
 
 _unit setSpeedMode "FULL";
 _unit allowFleeing 0;
@@ -48,9 +51,11 @@ while{_distanceT > 20 && alive _unit}do{
         _loiterHandle = [_unit,_hideout]spawn JOC_rebelPatrol;
         _distanceT = 999;
     }else{
-        terminate _loiterHandle;
-        _unit doMove (getPos _target);
-        _distanceT = _unit distance _target;
+        if(!(isNull _target))then{
+            terminate _loiterHandle;
+            _unit doMove (getPos _target);
+            _distanceT = _unit distance _target;
+        };
     };
 };
 

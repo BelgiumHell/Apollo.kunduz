@@ -6,7 +6,7 @@ while{true}do{
 		_curator = (getAssignedCuratorLogic player);
 		[[_curator],{
 			_curator = _this select 0;
-			_curator addCuratorEditableObjects [(allUnits - [cacheGroupLeader]),false];
+			_curator addCuratorEditableObjects [(allUnits - [cacheGroupLeaderCiv, cacheGroupLeaderEast]),false];
 			_curator addCuratorEditableObjects [allDead,false];
 			_curator addCuratorEditableObjects [vehicles,false];
 		}] remoteExec ["BIS_fnc_spawn", 2];
