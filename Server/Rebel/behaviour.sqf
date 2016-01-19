@@ -27,8 +27,6 @@ while {alive _unit} do {
         };
     } forEach (playableUnits + switchableUnits);
 
-    hint str _nearestPlayers;
-
     //Behaviour
     //Check for combat
     if(count _nearestPlayers > 1)then{

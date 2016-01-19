@@ -19,7 +19,7 @@ _unit setBehaviour "AWARE";
 
 waitUntil{(_unit distance _target) < 3 || !(_target getVariable "captureIP")};
 if(!(_target getVariable "captureIP"))exitWith{};
-[_target, true, (random 500 + 487)]call ace_medical_fnc_setUnconscious;
+[_target, true, ((random 500) + 487)]call ace_medical_fnc_setUnconscious;
 [_unit,_target]call ace_dragging_fnc_startCarry;
 
 sleep 20;

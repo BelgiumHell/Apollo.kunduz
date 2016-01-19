@@ -46,7 +46,7 @@ while{_i < 4}do{
         rebelCommander = _officer;
         cmdHideout = _hideout;
     }else{
-        officerArray pushBack _officer;
+        hvtLtArray pushBack _officer;
         [_officer]spawn JOC_rebelHvtbehaviourLt;
     };
 
@@ -57,7 +57,7 @@ while{_i < 4}do{
 };
 
 //Add diary record
-[[officerArray,rebelCommander],{
+[[hvtLtArray,rebelCommander],{
     params["_list","_cmd"];
     player createDiarySubject ["intel","Intel"];
     {
@@ -81,7 +81,10 @@ while{_i < ((count houses) * (population / 4))*0.06}do{
         _x setVariable ["needed", false];
         [_x]spawn JOC_rebelHvtBehaviourField;
     } forEach (units _group);
+
     (leader _group)setVariable ["JOC_caching_disabled", true, true];
+    hvtFieldArray pushBack (leader _group);
+
     _house setVariable ["units", (units _group)];
     [_house]call JOC_rebelCreateHideout;
 

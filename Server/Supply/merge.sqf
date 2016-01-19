@@ -2,7 +2,6 @@
 //Script made by Jochem//
 /////////////////////////
 params["_crate"];
-_found = false;
 
 {
     boxAmmo addItemCargoGlobal [_x, 1];

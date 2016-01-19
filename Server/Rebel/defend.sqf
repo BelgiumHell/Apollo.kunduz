@@ -1,15 +1,16 @@
 /////////////////////////
 //Script made by Jochem//
 /////////////////////////
-params["_hideout","_unit"];
+params["_unit"];
 
-_group = group (_units select 0);
+_group = (group _unit);
+_units = [];
+_hiedout = _unit getVariable "hideout";
 _safe = true;
 _roeHandle = scriptNull;
 
-if(_unit == leader (group _unit))then{
-    _units = _hideout getVariable "units";
-    _units = _units - [objNull];
+if(_unit == leader _group)then{
+    _units = units _group;
 
     _roeHandle = [_group]spawn{
         params["_group"];

@@ -31,6 +31,7 @@ JOC_managerSupply = compileFinal preprocessFileLineNumbers "Server\Manager\suppl
 JOC_managerTask = compileFinal preprocessFileLineNumbers "Server\Manager\task.sqf";
 
 //Misc
+JOC_miscClean = compileFinal preprocessFileLineNumbers "Server\Misc\clean.sqf";
 JOC_miscFindCenter = compileFinal preprocessFileLineNumbers "Server\Misc\findCenter.sqf";
 JOC_miscIed = compileFinal preprocessFileLineNumbers "Server\Misc\ied.sqf";
 JOC_miscNearestPlants = compileFinal preprocessFileLineNumbers "Server\Misc\nearestPlants.sqf";

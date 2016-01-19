@@ -36,6 +36,12 @@ _marker = createMarker ["mrk_area", [0,0,0]];
 "mrk_area" setMarkerSize [worldSize/2,worldSize/2];
 "mrk_area" setMarkerAlpha 0;
 
+_marker = createMarker ["mrk_dropZone", [0,0,0]];
+"mrk_dropZone" setMarkerShape "RECTANGLE";
+"mrk_dropZone" setMarkerPos [worldSize/2,worldSize/2];
+"mrk_dropZone" setMarkerSize [worldSize/2 - (worldSize/2/5),worldSize/2 - (worldSize/2/5)];
+"mrk_dropZone" setMarkerAlpha 0;
+
 //Call
 []call JOC_supplySupplySelect;
 []call JOC_initGenerateCompounds;
@@ -48,50 +54,9 @@ publicVariable "JOC_initComplete";
     hint "Mission loaded, have fun";
 }] remoteExec ["BIS_fnc_spawn", 0, true];
 
+sleep 10;
+
 //Spawn
 []spawn JOC_aiManager;
-//[]spawn JOC_managerBft;
 []spawn JOC_managerSupply;
-//[]spawn JOC_managerTask;
-
-[]spawn{
-    while{true}do{
-        //Remove destroyed ieds from array
-        iedArray = iedArray - [objNull];
-
-        //Cleanup
-        _items = nearestObjects [(getMarkerPos "mrk_area"), ["WeaponHolder","GroundWeaponHolder","WeaponHolderSimulated","SmokeShell","TimeBombCore"], 10000];
-        {
-        	_nearestPlayers = [];
-        	_location = (getPos _x);
-            {
-                if (isPlayer _x && _x distance _location < 500) then {
-                    _nearestPlayers pushBack _x;
-                };
-            } forEach (playableUnits + switchableUnits);
-            if(count _nearestPlayers == 0)then{
-        		deleteVehicle _x;
-        	};
-        }forEach _items;
-
-        _items = nearestObjects [(getMarkerPos "mrk_base"), ["WeaponHolder","GroundWeaponHolder","WeaponHolderSimulated","SmokeShell","TimeBombCore"], 100];
-        {
-        	deleteVehicle _x;
-        }forEach _items;
-        {
-        	_nearestPlayers = [];
-        	_location = (getPos _x);
-            {
-                if (isPlayer _x && (_x distance _location) < 500) then {
-                    _nearestPlayers pushBack _x;
-                };
-            } forEach (playableUnits + switchableUnits);
-
-            if(count _nearestPlayers == 0 or (_x distance (getMarkerPos "respawn_west")) < 100)then{
-        		_pad = (_x getVariable "pad");
-        		_pad setVariable["count",((_pad getVariable "count") - 1),true];
-        		deleteVehicle _x;
-        	};
-        }forEach allDead;
-    };
-};
+[]spawn JOC_miscClean;

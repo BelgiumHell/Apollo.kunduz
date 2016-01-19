@@ -24,8 +24,9 @@ while{true}do{
     } forEach (crew _plane);
 
     //Order aircraft move
-    [_plane,getMarkerPos "mrk_dropzone","limited",1500]spawn Zen_OrderVehicleMove;
-    waitUntil{(_plane distance2D (getMarkerPos "mrk_dropZone")) < 100};
+    _dropPos = ["mrk_dropZone"]call Zen_FindGroundPosition;
+    [_plane,_dropPos,"limited",1500]spawn Zen_OrderVehicleMove;
+    waitUntil{(_plane distance2D _dropPos) < 100};
 
     //Drop cargo
     switch (_supplyDrop) do {
@@ -132,7 +133,7 @@ while{true}do{
     } forEach _cargoDrop;
 
     //Order to move to end point
-    [_plane,getMarkerPos "mrk_jetEnd","full",2000]spawn Zen_OrderVehicleMove;
+    [_plane,getMarkerPos "mrk_jetEnd","full",1500]spawn Zen_OrderVehicleMove;
 
     //Delete aircraft
     waitUntil{(_plane distance2d (getMarkerPos "mrk_jetEnd")) < 500};

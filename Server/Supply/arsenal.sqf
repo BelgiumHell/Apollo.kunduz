@@ -112,9 +112,6 @@ _items = [
 	"ItemAndroid",
 	"ItemcTab",
 	"ItemcTabHCam",
-    "ACRE_PRC148",
-	"ACRE_PRC343",
-    "ACRE_PRC117F",
     "G_Tactical_Black",
     "G_Tactical_Clear",
     "G_Combat",
@@ -126,3 +123,12 @@ _items = [
 [_box,_magazines,false,true] call XLA_fnc_addVirtualMagazineCargo;
 [_box,_backpacks,false,true] call XLA_fnc_addVirtualBackpackCargo;
 [_box,(_uniforms + _vests + _helmets + _items),false,true] call XLA_fnc_addVirtualItemCargo;
+
+[[_box],{
+	params["_box"];
+    _action_343 = ["radio_343", "Get AN/PRC 343", "", {(_this select 1) addItem "ACRE_PRC343"}, {true}] call ace_interact_menu_fnc_createAction;
+	[_box, 0, ["ACE_MainActions"], _action_343] call ace_interact_menu_fnc_addActionToObject;
+
+	_action_148 = ["radio_148", "Get AN/PRC 148", "", {(_this select 1) addItem "ACRE_PRC148"}, {true}] call ace_interact_menu_fnc_createAction;
+	[_box, 0, ["ACE_MainActions"], _action_148] call ace_interact_menu_fnc_addActionToObject;
+}] remoteExec ["BIS_fnc_spawn", 0, true];
