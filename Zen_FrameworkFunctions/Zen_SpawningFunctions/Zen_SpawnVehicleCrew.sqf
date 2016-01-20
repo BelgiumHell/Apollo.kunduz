@@ -26,7 +26,7 @@
             }; \
         } forEach _vehicleTurrets;
 
-#include "Zen_StandardLibrary.sqf"
+#include "..\Zen_StandardLibrary.sqf"
 
 _Zen_stack_Trace = ["Zen_SpawnVehicleCrew", _this] call Zen_StackAdd;
 private ["_vehicle", "_crewClasses", "_crewGroup", "_vehicleConfigEntry", "_side", "_carCrewClass", "_tankCrewClass", "_heliCrewClass", "_jetCrewClass", "_heliPilotClass", "_turretTypes", "_hasDriver"];
@@ -66,11 +66,11 @@ switch (_side) do {
         _jetCrewClass = "b_pilot_f";
     };
     case east: {
-        _carCrewClass = "rhs_msv_emr_driver";
-        _tankCrewClass = "rhs_msv_emr_combatcrew";
-        _heliPilotClass = "rhs_pilot_combat_heli";
-        _heliCrewClass = "rhs_pilot_transport_heli";
-        _jetCrewClass = "rhs_pilot";
+        _carCrewClass = "o_soldier_f";
+        _tankCrewClass = "o_crew_f";
+        _heliPilotClass = "o_helipilot_f";
+        _heliCrewClass = "o_helicrew_f";
+        _jetCrewClass = "o_pilot_f";
     };
     case resistance: {
         _carCrewClass = "i_soldier_f";

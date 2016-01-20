@@ -5,7 +5,7 @@ params["_unit"];
 
 _group = (group _unit);
 _units = [];
-_hiedout = _unit getVariable "hideout";
+_hideout = _unit getVariable "hideout";
 _safe = true;
 _roeHandle = scriptNull;
 
@@ -28,16 +28,26 @@ if(_unit == leader _group)then{
         };
     };
 
-    _group move (getPos _hideout);
     _group setBehaviour "AWARE";
 
-    waitUntil{(_unit distance _hideout) < 15};
     [_units, getPos _hideout]spawn Zen_OrderInfantryPatrolBuilding;
 };
 
 
 waitUntil{
     sleep 5;
-    (isNull((leader _group) findNearestEnemy (getPos _hideout)) OR ((count (units _group)) == 0))
+    _nearestPlayers = [];
+    _nearestSurrender = [];
+    {
+        if((_x distance _unit) < 500)then{
+            if(_unit knowsAbout _x > 1)then{
+                _nearestPlayers pushBack _x;
+                if(captive _x)then{
+                    _nearestSurrender pushBack _x;
+                };
+            };
+        };
+    } forEach (playableUnits + switchableUnits);
+    (count (_nearestPlayers - _nearestSurrender) == 0  OR ((count (units _group)) == 0))
 };
 terminate _roeHandle;

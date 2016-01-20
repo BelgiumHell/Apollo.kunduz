@@ -2,8 +2,8 @@
 // This file is released under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)
 // See Legal.txt
 
-#include "Zen_FrameworkLibrary.sqf"
-#include "Zen_StandardLibrary.sqf"
+#include "..\Zen_FrameworkLibrary.sqf"
+#include "..\Zen_StandardLibrary.sqf"
 
 _Zen_stack_Trace = ["Zen_SpawnAmbientVehicles", _this] call Zen_StackAdd;
 private ["_center", "_distance", "_numCarsRange", "_townMarkers", "_carPos", "_carType", "_car", "_carClasses", "_carsMin", "_carsMax", "_numCars", "_carObjs", "_roadDir", "_DLC"];
@@ -20,7 +20,6 @@ _numCarsRange = _this select 2;
 ZEN_STD_Parse_GetArgumentDefault(_DLC, 3, "")
 
 _townMarkers = [["NameVillage", "NameCity", "NameCityCapital"]] call Zen_ConfigGetLocations;
-
 _townMarkers = [_townMarkers, (compile format ["(getMarkerPos _this) distance %1", _center]), "hash"] call Zen_ArraySort;
 
 if (typeName _numCarsRange != "ARRAY") then {

@@ -2,7 +2,7 @@
 // This file is released under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)
 // See Legal.txt
 
-#include "Zen_StandardLibrary.sqf"
+#include "..\Zen_StandardLibrary.sqf"
 
 _Zen_stack_Trace = ["Zen_SpawnConvoy", _this] call Zen_StackAdd;
 private ["_startPos", "_sideOrTypes", "_faction", "_vehicleTypes", "_vehicles", "_side", "_leadVehicleType", "_supplyVehicleType", "_troopVehicleType", "_roadDir", "_troopVehicle", "_troopCargo", "_troopGroup", "_leadVehicle", "_vehicleGroup"];
@@ -67,7 +67,7 @@ _troopVehicle = ZEN_STD_Array_LastElement(_vehicles);
 _troopCargo = ZEN_STD_OBJ_CountCargoSeats(_troopVehicle) + (count ([_troopVehicle, "cargoFFV"] call Zen_GetTurretPaths));
 
 if (_troopCargo > 0) then {
-    _troopGroup = [_startPos, _side, "infantry", [1, _troopCargo],"Basic"] call Zen_SpawnInfantry;
+    _troopGroup = [_startPos, _side, "infantry", [1, _troopCargo]] call Zen_SpawnInfantry;
     0 = [_troopGroup, _troopVehicle, "cargo"] call Zen_MoveInVehicle;
 };
 

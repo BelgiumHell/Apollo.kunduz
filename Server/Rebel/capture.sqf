@@ -30,5 +30,6 @@ _unit playMove "";
 _unit doMove (getPos (_unit getVariable "hideout"));
 _unit setBehaviour "SAFE";
 waitUntil {_unit distance (_unit getVariable "hideout") < 3};
+sleep 5;
 [_unit,_target]call ace_dragging_fnc_dropObject_carry;
 [_target,true]call ace_captives_fnc_setHandcuffed;

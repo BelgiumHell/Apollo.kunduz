@@ -851,7 +851,7 @@ class Mission
 						};
 						class Item6
 						{
-							value="4";
+							value="1";
 							parentCls="ACE_moduleMedicalSettings";
 							typeName="AIDamageThreshold";
 						};
@@ -3596,7 +3596,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=28;
+		items=27;
 		class Item0
 		{
 			position[]={4870.1533,4.0436878,1412.3008};
@@ -3625,61 +3625,54 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={2697.2368,8.1287394,2490.4717};
-			name="mrk_dropZone";
-			text="dropzone";
-			type="Empty";
-		};
-		class Item4
-		{
-			position[]={4962.6191,4.8673692,1419.854};
+			position[]={4962.4761,4.8638005,1420.3547};
 			name="respawn_west";
 			text="BLUFOR respawn";
 			type="Empty";
 		};
-		class Item5
+		class Item4
 		{
 			position[]={4983.6753,4.9305382,1388.1201};
 			name="mrk_base_vehicle";
 			text="Vehicle depot";
 			type="b_motor_inf";
 		};
-		class Item6
+		class Item5
 		{
 			position[]={5009.6348,4.9342575,1388.5952};
 			name="mrk_base_service_1";
 			text="Service point";
 			type="b_maint";
 		};
-		class Item7
+		class Item6
 		{
 			position[]={5026.8096,5.0673599,1390.8917};
 			name="mrk_base_service_2";
 			text="Service point";
 			type="b_maint";
 		};
-		class Item8
+		class Item7
 		{
 			position[]={5024.1123,5.0642281,1418.1851};
 			name="mrk_base_staging";
 			text="Staging ground";
 			type="b_unknown";
 		};
-		class Item9
+		class Item8
 		{
 			position[]={5078.0547,5.3854918,1390.5747};
 			name="mrk_base_air";
 			text="Helicopters";
 			type="b_air";
 		};
-		class Item10
+		class Item9
 		{
 			position[]={4965.1167,4.8583193,1427.1198};
 			name="mrk_base_barracks";
 			text="Barracks";
 			type="b_inf";
 		};
-		class Item11
+		class Item10
 		{
 			position[]={5001.8433,4.9339375,1394.2404};
 			name="mrk_base_wall";
@@ -3689,7 +3682,7 @@ class Mission
 			b=16;
 			angle=160;
 		};
-		class Item12
+		class Item11
 		{
 			position[]={5055.313,5.4012914,1386.9709};
 			name="mrk_base_wall_1";
@@ -3699,7 +3692,7 @@ class Mission
 			b=15.5;
 			angle=160;
 		};
-		class Item13
+		class Item12
 		{
 			position[]={4967.1738,4.8974433,1379.8635};
 			name="mrk_base_wall_2";
@@ -3709,7 +3702,7 @@ class Mission
 			b=24;
 			angle=160;
 		};
-		class Item14
+		class Item13
 		{
 			position[]={4950.543,4.8097739,1425.0104};
 			name="mrk_base_wall_3";
@@ -3719,7 +3712,7 @@ class Mission
 			b=16;
 			angle=160;
 		};
-		class Item15
+		class Item14
 		{
 			position[]={5023.0156,5.4907985,1452.4723};
 			name="mrk_base_wall_4";
@@ -3729,7 +3722,7 @@ class Mission
 			b=78.5;
 			angle=80;
 		};
-		class Item16
+		class Item15
 		{
 			position[]={5037.604,4.9400902,1369.8899};
 			name="mrk_base_wall_4_1";
@@ -3739,7 +3732,7 @@ class Mission
 			b=64;
 			angle=80;
 		};
-		class Item17
+		class Item16
 		{
 			position[]={5013.4746,5.0024352,1421.0027};
 			name="mrk_base_wall_4_2";
@@ -3749,7 +3742,7 @@ class Mission
 			b=60;
 			angle=80;
 		};
-		class Item18
+		class Item17
 		{
 			position[]={5027.7207,5.1179743,1413.4882};
 			name="mrk_base_wall_4_3";
@@ -3759,7 +3752,7 @@ class Mission
 			b=20;
 			angle=80;
 		};
-		class Item19
+		class Item18
 		{
 			position[]={5061.126,5.3516669,1402.1979};
 			name="mrk_base_wall_4_4";
@@ -3769,7 +3762,7 @@ class Mission
 			b=10;
 			angle=80;
 		};
-		class Item20
+		class Item19
 		{
 			position[]={4989.7998,4.9338279,1406.608};
 			name="mrk_base_wall_4_5";
@@ -3779,7 +3772,7 @@ class Mission
 			b=8;
 			angle=80;
 		};
-		class Item21
+		class Item20
 		{
 			position[]={4964.7354,4.9058084,1402.1725};
 			name="mrk_base_wall_4_5_1";
@@ -3789,7 +3782,7 @@ class Mission
 			b=6;
 			angle=80;
 		};
-		class Item22
+		class Item21
 		{
 			position[]={5098.8682,5.3259358,1423.0839};
 			name="mrk_base_wall_4_5_2";
@@ -3798,7 +3791,7 @@ class Mission
 			a=1.5;
 			b=44;
 		};
-		class Item23
+		class Item22
 		{
 			position[]={5072.0205,5.3184366,1416.626};
 			name="mrk_base_wall_4_5_3";
@@ -3807,7 +3800,7 @@ class Mission
 			a=1.5;
 			b=14;
 		};
-		class Item24
+		class Item23
 		{
 			position[]={5091.3765,5.3558302,1407.3756};
 			name="mrk_base_wall_4_4_1";
@@ -3817,21 +3810,21 @@ class Mission
 			b=7;
 			angle=80;
 		};
-		class Item25
+		class Item24
 		{
 			position[]={4992.5078,5.1629734,1440.2317};
 			name="mrk_base_depot";
 			text="Depot";
 			type="b_support";
 		};
-		class Item26
+		class Item25
 		{
 			position[]={4993.4053,4.986825,1434.2444};
 			name="mrk_box";
 			text="This box is deleted and adds the starting supply";
 			type="Empty";
 		};
-		class Item27
+		class Item26
 		{
 			position[]={997.48657,62.68544,2907.2861};
 			name="mrk_outpost";
