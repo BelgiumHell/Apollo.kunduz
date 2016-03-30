@@ -8,23 +8,26 @@ _units = [];
 _hideout = _unit getVariable "hideout";
 _safe = true;
 _roeHandle = scriptNull;
+_patrolHandle = scriptNull;
 
 if(_unit == leader _group)then{
     _units = units _group;
 
     _roeHandle = [_group]spawn{
         params["_group"];
+        while{true}do{
+            {
+                _saf = true;
 
-        {
-            if((_x findNearestEnemy (getPos _x)) distance _x < 250)then{
-                _group setCombatMode "YELLOW";
-            }else{
-                _safe = true;
+                if((_x findNearestEnemy (getPos _x)) distance _x < 250)then{
+                    _group setCombatMode "YELLOW";
+                    _safe = false;
+                };
+            } forEach (units _group);
+
+            if(_safe)then{
+                _group setCombatMode "WHITE";
             };
-        } forEach (units _group);
-
-        if(_safe)then{
-            _group setCombatMode "WHITE";
         };
     };
 
@@ -51,3 +54,4 @@ waitUntil{
     (count (_nearestPlayers - _nearestSurrender) == 0  OR ((count (units _group)) == 0))
 };
 terminate _roeHandle;
+terminate _patrolHandle;

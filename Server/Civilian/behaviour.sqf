@@ -18,7 +18,7 @@ _approvalStart = _approval;
 sleep 10;
 
 while {alive _unit} do {
-    waitUntil{sleep 10; simulationEnabled _unit};
+    waitUntil{sleep 20; simulationEnabled _unit};
 
     /*
     //Influence approval
@@ -71,5 +71,5 @@ while {alive _unit} do {
             };
         };
     };
-    waitUntil{sleep 10; simulationEnabled _unit};
+    waitUntil{sleep 20; simulationEnabled _unit};
 };

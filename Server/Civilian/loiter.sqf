@@ -4,9 +4,8 @@
 params["_unit","_home"];
 
 while{(alive _unit) && ((side _unit) == civilian)}do{
-
-    if(daytime > 9 && daytime < 18 && count (nearestObjects [[worldSize/2,worldSize/2], ["house"], 250]) < 50)then{
-        if((getPos _unit) distance2D _nearestMarket > (getPos _unit) distance2D _nearestField)then{
+    if(daytime > 7 && daytime < 19)then{
+        if(daytime > 9 && daytime < 17)then{
             _plant = ([(getPos _unit), 500]call JOC_miscNearestPlants) call BIS_fnc_selectRandom;
             _unit doMove _plant;
             waitUntil {sleep 10; _unit distance _plant < 2};

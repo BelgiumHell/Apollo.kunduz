@@ -8,12 +8,12 @@
             if(count (units _x) == 0)then{
                 deleteGroup _x;
             };
-            if(side _x != west)then{
+            if(side _x == east)then{
                 if(_x != cacheGroupCiv && _x != cacheGroupEast)then{
                     _objects = nearestObjects [(getPos (leader _x)),["Man","Car","Tank","Air"],1500];
 
                     if ((west countSide _objects) == 0)then{
-                        [_x]call JOC_cache;
+                        [units _x]call JOC_cache;
                     };
 
                 };
@@ -46,6 +46,8 @@
 
             if((west countSide _objects) > 0)then{
                 [(_x getVariable "units")]call JOC_unCache;
+            }else{
+                [(_x getVariable "units")]call JOC_cache;
             };
         } forEach homes;
         sleep 5;

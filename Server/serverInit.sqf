@@ -10,8 +10,10 @@ population = 0.2;           //Percentage of houses to occupy. 0-none // 1-all
 //Init caching vars
 cacheGroupEast = createGroup east;
 cacheGroupCiv = createGroup civilian;
+placeholderGroupWest = createGroup west;
 [cacheGroupLeaderEast] joinSilent cacheGroupEast;
 [cacheGroupLeaderCiv] joinSilent cacheGroupCiv;
+[placeholderGroupLeaderWest] joinSilent placeholderGroupWest;
 cachedArray = [];
 
 iedArray = [];

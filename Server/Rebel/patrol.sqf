@@ -11,6 +11,6 @@ while{alive _unit}do{
         (group _unit) setBehaviour "SAFE";
         (group _unit) setSpeedMode "LIMITED";
         (group _unit) setCombatMode "WHITE";
-        sleep 120;
+        sleep 60;
     };
 };

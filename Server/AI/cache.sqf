@@ -1,11 +1,9 @@
 /////////////////////////
 //Script made by Jochem//
 /////////////////////////
-params ["_group"];
+params ["_units"];
 
-if((leader _group) getVariable "JOC_caching_disabled")exitWith{};
-
-_units = units _group;
+if((_units select 0) getVariable "JOC_caching_disabled")exitWith{};
 
 {
     if(vehicleVarName _x == "")then{
@@ -16,13 +14,13 @@ _units = units _group;
     _x hideObjectGlobal true;
 } forEach _units;
 
-switch (side _group) do {
+switch (side (_units select 0)) do {
     case east: {
         cachedArray pushBack _units;
         _units joinSilent cacheGroupEast;
-        deleteGroup _group;
+        deleteGroup (group (_units select 0));
     };
     case civilian: {
-        
+
     };
 };

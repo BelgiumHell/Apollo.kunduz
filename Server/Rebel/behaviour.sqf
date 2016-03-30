@@ -32,7 +32,6 @@ while {alive _unit} do {
     if(count (_nearestPlayers - _nearestSurrender) > 0)then{
         terminate _handle;
         terminate _patrolHandle;
-        hint "defend";
         _handle = [_unit]spawn JOC_rebelDefend;
         waitUntil {sleep 10; scriptDone _handle};
     }else{
@@ -43,14 +42,12 @@ while {alive _unit} do {
             if((count _nearestSurrender) > 0 && (scriptDone _handle))then{
                 if(!((_nearestSurrender select 0) getVariable "captureIP"))then{
                     terminate _patrolHandle;
-                    hint "capture";
                     _handle = [_unit,(_nearestSurrender select 0)]spawn JOC_rebelCapture;
                 };
             }else{
                 //Place ied on chance
                 if((count iedArray) < 30 && (random 70) < 2 && (scriptDone _handle))then{
                     terminate _patrolHandle;
-                    hint "ied";
                     _handle = [_unit, _hideout]spawn JOC_rebelPlaceIED;
                 }else{
                     //Else just patrol
