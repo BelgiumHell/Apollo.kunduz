@@ -1,55 +1,60 @@
 /////////////////////////
 //Script made by Jochem//
 /////////////////////////
+_objects = [];
+
 //For caching
-[]spawn{
-    while{true}do{
-        {
-            if(count (units _x) == 0)then{
-                deleteGroup _x;
-            };
-            if(side _x == east)then{
-                if(_x != cacheGroupCiv && _x != cacheGroupEast)then{
-                    _objects = nearestObjects [(getPos (leader _x)),["Man","Car","Tank","Air"],1500];
+while{true}do{
+    //caching
+    waitUntil {sleep 1; (!JOC_pauseCache)};
+    {
+        if(count (units _x) == 0)then{
+            deleteGroup _x;
+        };
+        if(side _x == east)then{
+            if(!(_x in[cacheGroupEast,cacheGroupCiv,placeholderGroupWest]))then{
+                _objects = ((getPos (leader _x)) nearEntities [["Man","Car","Tank"],1500]) - [placeholderGroupLeaderWest];
 
-                    if ((west countSide _objects) == 0)then{
-                        [units _x]call JOC_cache;
-                    };
-
+                if ((west countSide _objects) == 0)then{
+                    [units _x]call JOC_cache;
                 };
             };
-        } forEach allGroups;
-        sleep 15;
-    };
-};
+        };
+    } forEach allGroups;
+    waitUntil {sleep 1; (!JOC_pauseCache)};
 
-//uncaching
-[]spawn{
-    while {true} do {
-        {
-            _objects = nearestObjects [_x select 0,["Man","Car","Tank","Air"],1500];
+
+    //uncaching
+    cachedArray = cachedArray - [[]];
+    {
+        if(isNull(_x select 0))then{
+            cachedArray deleteAt _forEachIndex;
+        }else{
+            _objects = (getPos (_x select 0) nearEntities [["Man","Car","Tank"],1500]) - [placeholderGroupLeaderWest];
 
             if((west countSide _objects) > 0)then{
                 [_x]call JOC_unCache;
             };
-        } forEach cachedArray;
-        sleep 5;
-        cachedArray = cachedArray - [[]];
-    };
-};
+        };
+    } forEach cachedArray;
 
-//civilian uncaching
-[]spawn{
-    while {true} do {
-        {
-            _objects = nearestObjects [(getPos _x),["Man","Car","Tank","Air"],1500];
+    //civilian uncaching
+    {
+        if(!isNil{(_x getVariable "units")})then{
+            _objects = ((getPos _x) nearEntities [["Man","Car","Tank"],1000]) - [placeholderGroupLeaderWest];
 
             if((west countSide _objects) > 0)then{
                 [(_x getVariable "units")]call JOC_unCache;
             }else{
-                [(_x getVariable "units")]call JOC_cache;
+                _objects = ((getPos _x) nearEntities [["Man","Car","Tank","Helicopter"],2500]) - [placeholderGroupLeaderWest];
+                if((west countSide _objects) == 0)then{
+                    [(_x getVariable "units")]call JOC_virtualize;
+                }else{
+                    [(_x getVariable "units")]call JOC_cache;
+                };
             };
-        } forEach homes;
-        sleep 5;
-    };
+        }else{
+            homes deleteAt _forEachIndex;
+        };
+    } forEach homes;
 };

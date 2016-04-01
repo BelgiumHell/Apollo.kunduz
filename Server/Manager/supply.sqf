@@ -106,8 +106,11 @@ while{true}do{
                     _veh addItemCargoGlobal ["DemoCharge_Remote_Mag", 4];
                 };
             };
-            _action = ["merge", "Merge crate", "", {[_this select 0]call JOC_supplyMerge;}, {(_this select 0) distance2D boxArsenal < 15}] call ace_interact_menu_fnc_createAction;
-            [_veh, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+            [[_veh],{
+                params["_veh"];
+                _action = ["merge", "Merge crate", "", {[_this select 0]call JOC_supplyMerge;}, {(_this select 0) distance2D boxArsenal < 15}] call ace_interact_menu_fnc_createAction;
+                [_veh, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+            }] remoteExec ["BIS_fnc_spawn", 0, true];
         };
         if(typeOf _veh == "CargoNet_01_box_F")then{
             clearWeaponCargoGlobal _veh;
@@ -127,8 +130,11 @@ while{true}do{
             _veh addItemCargoGlobal ["ACE_surgicalKit", 10];
             _veh addItemCargoGlobal ["ACE_bodyBag", 2];
             _veh addItemCargoGlobal ["ACE_personalAidKit", 1];
-            _action = ["merge", "Merge crate", "", {[_this select 0]call JOC_supplyMerge;}, {(_this select 0) distance2D boxArsenal < 15}] call ace_interact_menu_fnc_createAction;
-            [_veh, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+            [[_veh],{
+                params["_veh"];
+                _action = ["merge", "Merge crate", "", {[_this select 0]call JOC_supplyMerge;}, {(_this select 0) distance2D boxArsenal < 15}] call ace_interact_menu_fnc_createAction;
+                [_veh, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+            }] remoteExec ["BIS_fnc_spawn", 0, true];
         };
     } forEach _cargoDrop;
 

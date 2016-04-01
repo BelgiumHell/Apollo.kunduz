@@ -52,21 +52,6 @@ _vests = [
 	"lbt_weapons_od"
 ];
 _helmets = [
-	"noraf_opscore_helmet_cover_blk",
-	"noraf_opscore_helmet_cover_fg",
-	"noraf_opscore_helmet_cover",
-	"noraf_opscore_helmet",
-	"noraf_opscore_helmet_cover_blk_pelt",
-	"noraf_opscore_helmet_cover_fg_pelt",
-	"noraf_opscore_helmet_cover_pelt",
-	"crye_airframe_rg_AF_VAS",
-	"crye_airframe_tan_AF_VAS_cover",
-	"crye_airframe_blk_AF_VAS_cover",
-	"crye_airframe_rg_AF_VAS_cover",
-	"crye_airframe_blk_AF_VAS_Pelt_cover",
-	"crye_airframe_rg_AF_VAS_Pelt_cover",
-	"H_HelmetSpecB_snakeskin",
-	"H_HelmetB_snakeskin"
 ];
 _backpacks = [
 	"B_UAV_01_backpack_F",
@@ -82,9 +67,9 @@ _backpacks = [
 	"B_Carryall_mcamo",
 	"B_AssaultPack_mcamo",
 	"B_AssaultPack_rgr",
-	"B_AssaultPack_cbr"
+	"B_AssaultPack_cbr",
+	"UK3CB_BAF_B_Bergen_MTP_Rifleman_L_C"
 ];
-
 _items = [
 	"UK3CB_BAF_SFFH",
 	"UK3CB_BAF_Flashlight_L131A1",

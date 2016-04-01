@@ -23,4 +23,5 @@ _trigger setTriggerStatements [
     ""
 ];
 
+_ied setVariable ["JOC_trg", _trigger];
 _trigger setVariable ["JOC_ied", _ied];

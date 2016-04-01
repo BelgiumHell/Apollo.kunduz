@@ -34,9 +34,9 @@ while{true}do{
         } forEach (playableUnits + switchableUnits);
 
         if(count _nearestPlayers == 0 or (_x distance (getMarkerPos "respawn_west")) < 100)then{
-            _pad = (_x getVariable "pad");
-            _pad setVariable["count",((_pad getVariable "count") - 1),true];
             deleteVehicle _x;
         };
     }forEach allDead;
+
+    sleep 120;
 };

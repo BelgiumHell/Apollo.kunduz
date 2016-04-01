@@ -7,16 +7,8 @@ respawnOnStart = 0;
 respawnVehicleDelay = 0;
 disabledAI = true;
 enableDebugConsole = 1;
-showGroupIndicator = 0;
-wreckManagerMode = 1;
-
-corpseManagerMode = 1;
-corpseLimit = 50;
-corpseRemovalMinTime = 180;
-corpseRemovalMaxTime = 600;
 
 #include "CHVD\dialog.hpp"
-#include "VVS\menu.h"
 #include "Zen_FrameworkFunctions\Zen_DialogSystem\Zen_Dialog.hpp"
 
 class CfgNotifications {
@@ -33,7 +25,6 @@ class Header
 class CfgFunctions
 {
     #include "CHVD\CfgFunctions.hpp"
-    #include "VVS\Functions.h"
 };
 
 class CfgSounds

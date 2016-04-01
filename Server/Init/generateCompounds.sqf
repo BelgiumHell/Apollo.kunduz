@@ -11,21 +11,30 @@ _housesB = nearestObjects [[worldSize/2,worldSize/2], ["Land_MilOffices_V1_F","L
 _housesP = ((nearestObjects [[worldSize/2,worldSize/2], ["house"], (worldSize*2^0.5)]) - strategic - _housesB);
 
 {
-    if(((nearestBuilding _x) == _x) && ((count ([_x]call BIS_fnc_buildingPositions)) > 1))then{
+    if(((nearestBuilding _x) == _x) && ((count ([_x]call BIS_fnc_buildingPositions)) > 1) && !([_x,"mrk_safeZone"]call Zen_AreInArea))then{
+        _x setVehicleVarName format["house_%1",_forEachIndex];
         houses pushBack _x;
     }
 } forEach _housesP;
 
 villages = nearestLocations [[worldSize/2,worldSize/2], ["NameVillage","NameCity","NameCityCapital"], (worldSize*2^0.5)];
-housesVillages = [];
 {
     _house = _x;
+    if([_x,"mrk_safeZone"]call Zen_AreInArea)then{
+        housesSafe pushBack _x;
+    };
     {
-        if((getPos _x) distance2d _house < 400)then{
+        if((getPos _x) distance2d _house < 100)then{
             housesVillages pushBack _house;
+        };
+        if((getPos _x) distance2d _house < 100)then{
+            housesBlack pushBack _house;
         };
     } forEach villages;
 } forEach houses;
 
 //Mosques
 mosques = nearestObjects [[worldSize/2,worldSize/2], ["Land_Jbad_A_Minaret"], (worldSize*2^0.5)];
+
+//Plants
+plants = [[worldSize/2,worldSize/2], (worldSize*2^0.5)]call JOC_miscNearestPlants;

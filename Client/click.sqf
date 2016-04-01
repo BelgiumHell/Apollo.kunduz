@@ -11,10 +11,7 @@ onMapSingleClick{
 	_markers = allMapMarkers;
 	{
 		_distance = ((getMarkerPos _x) distance _position);
-		_control = (findDisplay 12) displayCtrl 51; //Arma 3
-		_scale = ctrlMapScale _control; //returns number from 1 to 0.001
-		_scale = _scale * 300;
-		if((_distance < _scale) && (_distance < _prevDis))then{
+		if((_distance < 70) and (_distance < _prevDis))then{
 			_prevDis = _distance;
 			_groupIdG = _x;
 		};
@@ -39,11 +36,13 @@ onMapSingleClick{
 			_unitText = composeText [_unitText, lineBreak, (name _x) + ""];
 		}forEach _unitsG;
 		_text = parseText format["<t color='#0080FF' size='2'>%1</t>",_groupIdG];
+
 		_freq = 0;
 		{
 			_freq = (call TFAR_fnc_ActiveSwRadio) call TFAR_fnc_getSwFrequency;
 		}forEach [(leader _group)];
-		_freqText = format["SW freq: %1",_freq];
+
+		_freqText = format["Radio freq: %1",_freq];
 		_text = composeText [_text, lineBreak, _unitText, lineBreak, lineBreak, _freqText];
 		hint _text;
 	};

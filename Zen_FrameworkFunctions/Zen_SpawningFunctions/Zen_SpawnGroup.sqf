@@ -40,10 +40,14 @@ if ((count units _group == 0) || (isNull _group)) exitWith {
 if (surfaceIsWater _pos) then {
     {
         _x setPosASL _pos;
+        _name = [10] call Zen_StringGenerateRandom;
+        _x setVehicleVarName _name;
     } forEach (units _group);
 } else {
     {
         _x setPosATL _pos;
+        _name = [10] call Zen_StringGenerateRandom;
+        _x setVehicleVarName _name;
     } forEach (units _group);
 };
 

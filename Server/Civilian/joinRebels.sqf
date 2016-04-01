@@ -11,14 +11,20 @@ _group = grpNull;
         _groups pushBack _x;
     };
 } forEach allGroups;
-_prevDis = 999999;
-{
-    _dis = (_unit distance (leader _x));
-    if(_prevDis > _dis)then{
-        _group = _x;
-        _prevDis = _dis;
-    };
-} forEach _groups;
+
+if(count _groups == 0)then{
+    _group = createGroup east;
+    _unit setVariable ["hideout", (hideouts call BIS_fnc_selectRandom)];
+}else{
+    _prevDis = 999999;
+    {
+        _dis = (_unit distance (leader _x));
+        if(_prevDis > _dis)then{
+            _group = _x;
+            _prevDis = _dis;
+        };
+    } forEach _groups;
+};
 
 [_unit] joinSilent grpNull;
 [_unit] joinSilent _group;
@@ -33,6 +39,4 @@ _unit doMove (getPos _hideout);
 waitUntil {sleep 10; _unit distance2D _hideout < 2};
 
 _unit addPrimaryWeaponItem "";
-_handle = [_unit]call asr_ai3_main_fnc_rearm;  //required ASR AI
-
-[_unit]spawn JOC_rebelBehaviour;
+_handle = [_unit]call asr_ai3_main_fnc_rearm;  //requires ASR AI

@@ -1,75 +1,57 @@
 /////////////////////////
 //Script made by Jochem//
 /////////////////////////
-params["_unit"];
-
-_mosqueB = objNull;
 _prevDis = 9999;
-_loiterHandle = scriptNull;
-_handle = scriptNull;
-_home = _unit getVariable "home";
+_patrolHandles = [];
 
-_unit setBehaviour "SAFE";
-_unitCount = count (units (group _unit));
-_approval = random 10;
+_unitCount = 0;
+_approval = random 100;
 _approvalStart = _approval;
+_unit = objNull;
+_handle = scriptNull;
 
-//sleep a bit
 sleep 10;
 
-while {alive _unit} do {
-    waitUntil{sleep 20; simulationEnabled _unit};
+while{true}do{
+    sleep 20;
+    _units = units civGroup - [civGroupLeader];
 
-    /*
-    //Influence approval
-    if(count (units (group _unit)) < _unitCount)then{
-        _approval = _approval - (15 / _approvalStart);
-    };
-    _unitCount = count (units (group _unit));
-    */
+    civGroup setBehaviour "SAFE";
+    civGroup setSpeedMode "LIMITED";
 
-    //If home is destroyed, join the rebels
-    if(!alive _home)then{
-        terminate _loiterHandle;
-        terminate _handle;
+    {
+        /*_home = _x getVariable "home";
 
-        [_unit]spawn JOC_civJoinRebels;
-        if(true)exitWith{};
-    };
+        if(damage _home > 0.3)then{
+            [_x]spawn JOC_civJoinRebels;
+        };*/
+        _x disableAI "AUTOCOMBAT";
+    } forEach _units;
 
-    if(damage _unit > 0.1)then{
-        terminate _loiterHandle;
-        terminate _handle;
-
-        _handle = [_unit]spawn JOC_civAid;
-        waitUntil {sleep 10; scriptDone _handle};
-        if((damage _unit) > 0.1)then{
-            _approval = 0.5;
-        }else{
-            _approval = _approval + (_approval / 2);
-        };
-    }else{
-        if((random 100 * _approval) < 1 && _approval < 8 && (scriptDone _handle))then{
-            terminate _loiterHandle;
-            terminate _handle;
-
-            [_unit,_home]spawn JOC_civBomber;
-            if(true)exitWith{};
-        }else{
-            if(daytime > 7 && daytime < 7.5 && (random 3) < 1 && (scriptDone _handle))then{
-                _handle = [_unit]spawn JOC_civMosque;
-            }else{
-                if(scriptDone _handle)then{
-                    if((20 < daytime) || (daytime < 5) && (scriptDone _handle))then{
-                        terminate _loiterHandle;
-                        _loiterHandle = [_unit,getPos _home]spawn Zen_OrderInfantryPatrolBuilding;
-                    }else{
-                        terminate _loiterHandle;
-                        _loiterHandle = [_unit,_home]spawn JOC_civLoiter;
-                    };
-                };
+    //Bomber
+    if((random 100 * _approval) < 1 && _approval < 8 && (scriptDone _handle))then{
+        _unit = selectRandom _units;
+        {
+            if(_x select 0 == _unit)then{
+                terminate (_x select 1);
             };
+        } forEach _patrolHandles;
+
+        [_unit,_home]spawn JOC_civBomber;
+    }else{
+        //Walk around
+        if(scriptDone _handle)then{
+            {
+                if(!(_x getVariable ["loiter",false]))then{
+                    diag_log "loiter";
+                    _home = _x getVariable "home";
+                    _x setVariable ["loiter", true];
+                    _patrolHandle = [_x,_home]spawn JOC_civLoiter;
+                    _patrolHandles pushBack [_x, _patrolHandle];
+                };
+            } forEach _units;
         };
     };
-    waitUntil{sleep 20; simulationEnabled _unit};
+    sleep 20;
+    diag_log "civ loop";
 };

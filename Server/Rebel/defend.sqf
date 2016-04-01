@@ -1,49 +1,46 @@
 /////////////////////////
 //Script made by Jochem//
 /////////////////////////
-params["_unit"];
+params["_group"];
 
-_group = (group _unit);
-_units = [];
-_hideout = _unit getVariable "hideout";
+_units = units _group;
+_hideout = (leader _group) getVariable "hideout";
 _safe = true;
 _roeHandle = scriptNull;
 _patrolHandle = scriptNull;
 
-if(_unit == leader _group)then{
-    _units = units _group;
+_roeHandle = [_group]spawn{
+    params["_group"];
 
-    _roeHandle = [_group]spawn{
-        params["_group"];
-        while{true}do{
-            {
-                _saf = true;
+    while{true}do{
+        _safe = true;
 
-                if((_x findNearestEnemy (getPos _x)) distance _x < 250)then{
-                    _group setCombatMode "YELLOW";
-                    _safe = false;
-                };
-            } forEach (units _group);
-
-            if(_safe)then{
-                _group setCombatMode "WHITE";
+        {
+            if((_x findNearestEnemy (getPos _x)) distance _x < 250)then{
+                _group setCombatMode "RED";
+                _safe = false;
             };
+        } forEach (units _group);
+
+        if(_safe)then{
+            _group setCombatMode "YELLOW";
         };
     };
-
-    _group setBehaviour "AWARE";
-
-    [_units, getPos _hideout]spawn Zen_OrderInfantryPatrolBuilding;
 };
 
+{
+    _x disableAI "AUTOCOMBAT";
+} forEach _units;
+_group setBehaviour "COMBAT";
+_patrolHandle = [_units, getPos _hideout]spawn Zen_OrderInfantryPatrolBuilding;
 
 waitUntil{
     sleep 5;
     _nearestPlayers = [];
     _nearestSurrender = [];
     {
-        if((_x distance _unit) < 500)then{
-            if(_unit knowsAbout _x > 1)then{
+        if((_x distance (leader _group)) < 500)then{
+            if((leader _group) knowsAbout _x > 1)then{
                 _nearestPlayers pushBack _x;
                 if(captive _x)then{
                     _nearestSurrender pushBack _x;
@@ -53,5 +50,8 @@ waitUntil{
     } forEach (playableUnits + switchableUnits);
     (count (_nearestPlayers - _nearestSurrender) == 0  OR ((count (units _group)) == 0))
 };
-terminate _roeHandle;
+{
+    _x enableAI "AUTOCOMBAT";
+} forEach _units;
+//terminate _roeHandle;
 terminate _patrolHandle;

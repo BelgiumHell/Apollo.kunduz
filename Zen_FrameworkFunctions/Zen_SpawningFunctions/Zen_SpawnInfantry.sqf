@@ -77,11 +77,15 @@ for "_i" from 1 to _c do {
     _soldierlistrand pushBack ([_soldierlist] call Zen_ArrayGetRandom);
 };
 
-_group = [_spawnPos, _soldierlistrand] call Zen_SpawnGroup;
+_group = [_spawnPos, _soldierlistrand, _side] call Zen_SpawnGroup;
 
-(leader _group) setUnitRank "CORPORAL";
-0 = [(units _group), _skill] call Zen_SetAISkill;
+_groupC = createGroup _side;
+(units _group) joinSilent _groupC;
+
+
+(leader _groupC) setUnitRank "CORPORAL";
+//0 = [(units _groupC), _skill] call Zen_SetAISkill;
 _group allowFleeing 0;
 
 call Zen_StackRemove;
-(_group)
+(_groupC)

@@ -1,0 +1,24 @@
+params["_crate"];
+
+clearWeaponCargoGlobal _crate;
+clearMagazineCargoGlobal _crate;
+clearItemCargoGlobal _crate;
+_crate addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_Mk318_Stanag", 50];
+_crate addMagazineCargoGlobal ["rhsusf_100Rnd_556x45_soft_pouch", 20];
+_crate addMagazineCargoGlobal ["rhsusf_20Rnd_762x51_m118_special_Mag", 16];
+_crate addMagazineCargoGlobal ["rhsusf_mag_15Rnd_9x19_JHP", 12];
+_crate addMagazineCargoGlobal ["rhsusf_50Rnd_762x51", 12];
+_crate addMagazineCargoGlobal ["HandGrenade", 8];
+_crate addItemCargoGlobal ["ACE_EarPlugs", 10];
+_crate addItemCargoGlobal ["rhs_mag_M433_HEDP", 5];
+_crate addItemCargoGlobal ["1Rnd_SmokePurple_Grenade_shell", 5];
+_crate addItemCargoGlobal ["1Rnd_SmokeGreen_Grenade_shell", 5];
+_crate addMagazineCargoGlobal ["SmokeShell", 8];
+_crate addMagazineCargoGlobal ["SmokeShellGreen", 4];
+_crate addWeaponCargoGlobal ["tf47_at4_hedp", 4];
+_crate addWeaponCargoGlobal ["rhs_weap_smaw_green", 2];
+_crate addMagazineCargoGlobal ["rhs_mag_smaw_HEAA", 4];
+_crate addMagazineCargoGlobal ["rhs_mag_smaw_HEDP", 12];
+_crate addMagazineCargoGlobal ["rhs_mag_smaw_SR", 4];
+_crate addItemCargoGlobal ["rhs_weap_optic_smaw", 2];
+_crate addItemCargoGlobal ["DemoCharge_Remote_Mag", 4];
