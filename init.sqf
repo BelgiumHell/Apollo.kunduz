@@ -19,7 +19,7 @@ if(isServer)then{
     JOC_initComplete = false;
     publicVariable "JOC_initComplete";
 
-    exec "Server\serverInit.sqs";
+    []call JOC_serverInit;
 }else{
 
     if(!hasInterface)then{

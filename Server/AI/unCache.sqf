@@ -15,8 +15,12 @@ if(_side != civilian)then{
     _units joinSilent _group;
     _group selectLeader (_units select 0);
     cachedArray = cachedArray - [_units];
+    [(_units select 0)]spawn JOC_rebelBehaviour;
 }else{
-    _units joinSilent civGroup;
+    _group = createGroup civilian;
+    _units joinSilent _group;
+    _group selectLeader (_units select 0);
+    [_units]spawn JOC_civBehaviour;
 };
 
 [[_units],{
@@ -26,7 +30,3 @@ if(_side != civilian)then{
         _x hideObjectGlobal false;
     } forEach _units;
 }] remoteExec ["BIS_fnc_spawn", 2];
-
-if(_side != civilian)then{
-    [(_units select 0)]spawn JOC_rebelBehaviour;
-};

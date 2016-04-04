@@ -39,7 +39,7 @@ _housePosArray = [];
     _x setUnitPos "up";
 } forEach _units;
 
-while {(count _units > 0)} do {
+//while {(count _units > 0)} do {
     {
         if (isNull _x || {!(alive _x)}) then {
             _units set [_forEachIndex, 0];
@@ -59,8 +59,8 @@ while {(count _units > 0)} do {
         };
     } forEach _units;
     0 = [_units, 0] call Zen_ArrayRemoveValue;
-    sleep 10;
-};
+   sleep 10;
+//};
 
 call Zen_StackRemove;
 if (true) exitWith {};

@@ -1,6 +1,8 @@
 /////////////////////////
 //Script made by Jochem//
 /////////////////////////
+diag_log "serverInit";
+
 //Parameters *FREE TO EDIT*
 infantryPool = ["CAF_AG_ME_T_AK47","CAF_AG_ME_T_AK74","CAF_AG_ME_T_GL","CAF_AG_ME_T_PKM","CAF_AG_ME_T_RPG","CAF_AG_ME_T_RPK74","CAF_AG_ME_T_SVD"]; //infantry classnames
 truckPool = ["LOP_ISTS_Landrover","LOP_ISTS_Landrover_M2","LOP_ISTS_Offroad","LOP_ISTS_Offroad_M2","LOP_ISTS_Truck"];
@@ -121,4 +123,3 @@ publicVariable "JOC_initComplete";
 []spawn JOC_aiManager;
 []spawn JOC_miscClean;
 []spawn JOC_managerSupply;
-[]spawn JOC_civBehaviour;
