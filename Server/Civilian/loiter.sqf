@@ -13,7 +13,7 @@ while{(alive _unit) && ((side _unit) == civilian)}do{
         _handeSleep = scriptNull;
         if(daytime > 9 && daytime < 17)then{
             diag_log "civ-loiter-work";
-            _plant = ([plants,(getPos _home), 600]call JOC_miscGetNearest) call BIS_fnc_selectRandom;
+            _plant = selectRandom ([plants,(getPos _home), 600]call JOC_miscGetNearest);
             while{(_unit distance _plant) > 2}do{
                 _unit doMove (getPos _plant);
                 sleep 30;

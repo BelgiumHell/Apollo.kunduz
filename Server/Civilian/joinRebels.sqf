@@ -14,7 +14,7 @@ _group = grpNull;
 
 if(count _groups == 0)then{
     _group = createGroup east;
-    _unit setVariable ["hideout", (hideouts call BIS_fnc_selectRandom)];
+    _unit setVariable ["hideout", selectRandom hideouts];
 }else{
     _prevDis = 999999;
     {

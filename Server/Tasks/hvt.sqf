@@ -2,7 +2,7 @@
 //Script made by Jochem//
 /////////////////////////
 //location
-_compound = hideouts call BIS_fnc_selectRandom;
+_compound = selectRandom hideouts;
 _location = getPos _compound;
 
 //Create task

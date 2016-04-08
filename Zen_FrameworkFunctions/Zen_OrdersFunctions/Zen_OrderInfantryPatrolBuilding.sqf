@@ -15,7 +15,7 @@ _units = [(_this select 0)] call Zen_ConvertToObjectArray;
 _centerPos = [(_this select 1)] call Zen_ConvertToPosition;
 
 ZEN_STD_Parse_GetArgumentDefault(_patrolOutside, 2, false)
-ZEN_STD_Parse_GetArgumentDefault(_behavior, 3, "aware")
+ZEN_STD_Parse_GetArgumentDefault(_behavior, 3, "safe")
 ZEN_STD_Parse_GetArgumentDefault(_houseCount, 4, 1)
 
 _nearBuilding = nearestBuilding _centerPos;
